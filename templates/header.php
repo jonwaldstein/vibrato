@@ -1,12 +1,33 @@
-<header class="banner">
-  <div class="container">
-    <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
-    <nav class="nav-primary">
+<?php
+$site_logo = function_exists('carbon_get_theme_option') ? carbon_get_theme_option('site_logo') : null;
+?>
+<header>
+
+ <div class="header navbar navbar-expand-md">
+    <div class="container">
+       <a class="navbar-brand" href="<?= get_home_url('/'); ?>">
+        <?= $site_logo ? wp_get_attachment_image($site_logo, 'full') : get_bloginfo( 'name' );?>
+        </a>
       <?php
-      if (has_nav_menu('primary_navigation')) :
-        wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']);
-      endif;
+      wp_nav_menu([
+        'menu'            => 'primary_navigation',
+        'theme_location'  => 'primary_navigation',
+        'container'       => 'nav',
+        'container_id'    => 'primary-navigation',
+        'container_class' => 'collapse navbar-collapse',
+        'menu_id'         => false,
+        'menu_class'      => 'navbar-nav ml-auto',
+        'depth'           => 2,
+        'fallback_cb'     => 'BootstrapNavwalker::fallback',
+        'walker'          => new BootstrapNavwalker()
+      ]);
       ?>
-    </nav>
+      <button class="hamburger hamburger--squeeze navbar-toggler" type="button" data-toggle="collapse" data-target="#primary-navigation" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </div>
   </div>
+
 </header>

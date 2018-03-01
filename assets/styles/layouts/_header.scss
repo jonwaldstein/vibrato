@@ -1,0 +1,26 @@
+#primary-navigation {
+	@include media-breakpoint-down(sm) {
+	    position: absolute;
+	    top: 100%;
+	    z-index: 999;
+	    background: #fff;
+	    left: 0;
+	    right: 0;
+	}
+}
+
+.navbar-nav .nav-link {
+	@include media-breakpoint-down(sm) {
+	    padding-right: 0;
+	    padding-left: 0;
+	    text-align: center;
+	    padding-top: 10px;
+	    padding-bottom: 10px;
+	    border-top: 1px solid #dcdcdc;
+	    &:hover{
+	    	background: #333;
+	    	color: #fff;
+	    	transition: all 0.2s
+	    }
+	}
+}

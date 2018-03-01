@@ -36,4 +36,11 @@ final class ThemeCarbonFields
 		
 	}
 
+	public function bannner()
+	{
+
+		get_template_part('lib/callbacks/fields/Banner');
+		
+	}
+
 }
