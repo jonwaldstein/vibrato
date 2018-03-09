@@ -3,7 +3,7 @@
 	$date = date('Y ');
 ?>
 <footer class="footer text-light">
-	<div class="footer__top bg-dark-custom">
+	<div class="footer__top bg-dark">
 		<div class="container">
 		  	<div class="row pt-5 pb-5">
 		  		<div class="col-md-4 d-flex justify-content-md-center">

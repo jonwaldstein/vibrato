@@ -1,5 +1,4 @@
 <?php
-
 namespace Roots\Sage\Classes;
 
 use Carbon_Fields\Container;

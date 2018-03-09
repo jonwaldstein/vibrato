@@ -1,23 +1,13 @@
 <?php
-
-namespace Roots\Sage\Wrapper;
-
+namespace Roots\Sage\Classes;
 /**
  * Theme wrapper
  *
  * @link https://roots.io/sage/docs/theme-wrapper/
  * @link http://scribu.net/wordpress/theme-wrappers.html
  */
-
-function template_path() {
-  return SageWrapping::$main_template;
-}
-
-function sidebar_path() {
-  return new SageWrapping('templates/sidebar.php');
-}
-
-class SageWrapping {
+class Wrapper 
+{
   // Stores the full path to the main template file
   public static $main_template;
 
@@ -58,7 +48,15 @@ class SageWrapping {
       self::$base = false;
     }
 
-    return new SageWrapping();
+    return new Wrapper();
+  }
+
+  public static function template_path() {
+    return self::$main_template;
+  }
+
+  public static function sidebar_path() {
+    return new self('templates/sidebar.php');
   }
 }
-add_filter('template_include', [__NAMESPACE__ . '\\SageWrapping', 'wrap'], 109);
+

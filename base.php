@@ -1,7 +1,6 @@
 <?php
-
-use Roots\Sage\Setup;
-use Roots\Sage\Wrapper;
+use Roots\Sage\Classes\Wrapper;
+use Roots\Sage\Classes\Setup;
 
 ?>
 
@@ -22,11 +21,11 @@ use Roots\Sage\Wrapper;
     <div class="wrap container">
       <div class="content row">
         <main class="main">
-          <?php include Wrapper\template_path(); ?>
+          <?php include Wrapper::template_path(); ?>
         </main><!-- /.main -->
-        <?php if (Setup\display_sidebar()) : ?>
+        <?php if (Setup::display_sidebar()) : ?>
           <aside class="sidebar">
-            <?php include Wrapper\sidebar_path(); ?>
+            <?php include Wrapper::sidebar_path(); ?>
           </aside><!-- /.sidebar -->
         <?php endif; ?>
       </div><!-- /.content -->

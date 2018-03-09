@@ -1,5 +1,5 @@
 <?php
-
+namespace Roots\Sage\Classes;
 /**
  * Class Name: bs4Navwalker
  * GitHub URI: https://github.com/dupkey/bs4navwalker
@@ -8,7 +8,7 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
 
-class BootstrapNavwalker extends Walker_Nav_Menu
+class BootstrapNavwalker extends \Walker_Nav_Menu
 {
     /**
      * Starts the list before the elements are added.

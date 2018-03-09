@@ -1,6 +1,5 @@
 <?php
-
-namespace Roots\Sage\Assets;
+namespace Roots\Sage\Classes;
 
 /**
  * Get paths for assets
@@ -36,23 +35,5 @@ class JsonManifest {
       }
     }
     return $collection;
-  }
-}
-
-function asset_path($filename) {
-  $dist_path = get_template_directory_uri() . '/dist/';
-  $directory = dirname($filename) . '/';
-  $file = basename($filename);
-  static $manifest;
-
-  if (empty($manifest)) {
-    $manifest_path = get_template_directory() . '/dist/' . 'assets.json';
-    $manifest = new JsonManifest($manifest_path);
-  }
-
-  if (array_key_exists($file, $manifest->get())) {
-    return $dist_path . $directory . $manifest->get()[$file];
-  } else {
-    return $dist_path . $directory . $file;
   }
 }
