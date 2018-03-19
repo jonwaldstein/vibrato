@@ -14,8 +14,14 @@ let mix = require('laravel-mix');
 mix.js('assets/scripts/main.js', 'dist/scripts/')
    .sass('assets/styles/main.scss', 'dist/styles/')
    .copy('assets/fonts/', 'dist/fonts/')
-   .copy('assets/images/', 'dist/images/')
+   .copy('assets/images/', 'dist/images/');
 
+if (!mix.inProduction()) {
+    mix.webpackConfig({
+        devtool: 'source-map'
+    })
+    .sourceMaps()
+}
 // Full API
 // mix.js(src, output);
 // mix.react(src, output); <-- Identical to mix.js(), but registers React Babel compilation.

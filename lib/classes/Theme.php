@@ -13,10 +13,10 @@ final class Theme
 
 	public function add_actions()
 	{
-		add_action('after_setup_theme', function(){
+		if (class_exists('Roots\\Sage\\Classes\\Setup')){
 			$Setup = new Setup();
 			$Setup->init();
-		});
+		}
 		add_action('customize_register', array($this,'customize_register') );
 		add_action('customize_preview_init', array($this,'customize_preview_js') );
 	}
