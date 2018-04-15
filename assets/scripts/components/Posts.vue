@@ -4,7 +4,9 @@
       <div v-if="postsLoading" class="loader">
         <i class="fa-3x fas fa-circle-notch fa-spin"></i>
       </div>
-      <post v-for="post in posts" :key="post.id" :post="post"></post>
+      <transition name="fade">
+       <post v-for="post in posts" :key="post.id" :post="post"></post>
+      </transition>
     </div>
   </div>
 </template>
