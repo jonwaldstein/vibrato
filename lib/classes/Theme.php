@@ -118,4 +118,12 @@ final class Theme
 	public function customize_preview_js() {
 	  wp_enqueue_script('sage/customizer', Theme::asset_path('scripts/customizer.js'), ['customize-preview'], null, true);
 	}
+
+	/**
+	* Page Builder
+	*/
+	public static function page_builder()
+	{
+		get_template_part('templates/page-builder');
+	}
 }

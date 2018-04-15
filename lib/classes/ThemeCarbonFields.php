@@ -41,5 +41,10 @@ final class ThemeCarbonFields
 		get_template_part('lib/callbacks/fields/Banner');
 		
 	}
+	
+	public function page_builder()
+	{
+		get_template_part('lib/callbacks/fields/PageBuilder');
+	}
 
 }
