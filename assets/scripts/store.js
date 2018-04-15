@@ -12,7 +12,7 @@ export const store = new Vuex.Store({
   },
 	actions: {
 		retrievePosts(context) {
-      axios.get('wp/v2/posts?per_page=100')
+      axios.get('wp/v2/posts?_embed')
         .then(response => {
           context.commit('retrievePosts', {
           	posts: response.data,
