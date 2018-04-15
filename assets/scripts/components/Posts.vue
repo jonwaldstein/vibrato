@@ -1,17 +1,17 @@
 <template lang="html">
-	<div class="container">
-		<div class="row">
-			<div v-if="postsLoading" class="loader">
-  			<i class="fa-3x fas fa-circle-notch fa-spin"></i>
-  		</div>
-    	<post v-for="post in posts" :key="post.id" :post="post"></post>
-  	</div>
-	</div>
+  <div class="container">
+    <div class="row">
+      <div v-if="postsLoading" class="loader">
+        <i class="fa-3x fas fa-circle-notch fa-spin"></i>
+      </div>
+      <post v-for="post in posts" :key="post.id" :post="post"></post>
+    </div>
+  </div>
 </template>
 
 <script>
 // import Component locally rather than making it global in main.js
-import post from './Post.vue';
+import Post from './Post.vue';
 import axios from 'axios';
 
 export default {

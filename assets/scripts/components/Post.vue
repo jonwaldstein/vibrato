@@ -1,7 +1,7 @@
 <template lang="html">
 	<div class=" col-md-4 mb-4" v-if="post">
 		<div class="post__inner">
-			<div class="post__image--wrapper">
+			<div class="post__image--wrapper" v-if="hasThumbnail(post)">
 				<img class="post__image img-fluid" :src="hasThumbnail(post)" alt="" />
 			</div>
 			<div class="post__meta">
@@ -31,7 +31,7 @@ export default {
 	},
 	methods: {
 		hasThumbnail: function(post) {
-       if (post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].media_details && post._embedded['wp:featuredmedia'][0].media_details.sizes)
+       if (post && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].media_details && post._embedded['wp:featuredmedia'][0].media_details.sizes)
        {
          return  post._embedded['wp:featuredmedia'][0].source_url;
        }
