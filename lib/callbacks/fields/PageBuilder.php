@@ -26,6 +26,7 @@ Container::make( 'post_meta', 'Page Builder' )//PAGE BUILDER FIELDS
                 'pt-2' => '2',
                 'pt-3' => '3',
                 'pt-4' => '4',
+                'pt-5' => '5',
             ))->set_default_value( 'pt-4' ),
             Field::make("select", "section_padding_bottom")
             ->set_width(50)
@@ -35,6 +36,7 @@ Container::make( 'post_meta', 'Page Builder' )//PAGE BUILDER FIELDS
                 'pb-2' => '2',
                 'pb-3' => '3',
                 'pb-4' => '4',
+                'pb-5' => '5',
             ))->set_default_value( 'pb-4' ),
              Field::make("select", "section_margin_top")
             ->set_width(50)
@@ -44,6 +46,7 @@ Container::make( 'post_meta', 'Page Builder' )//PAGE BUILDER FIELDS
                 'mt-2' => '2',
                 'mt-3' => '3',
                 'mt-4' => '4',
+                'mt-5' => '5',
             ))->set_default_value( 'mt-0' ),
             Field::make("select", "section_margin_bottom")
             ->set_width(50)
@@ -53,6 +56,7 @@ Container::make( 'post_meta', 'Page Builder' )//PAGE BUILDER FIELDS
                 'mb-2' => '2',
                 'mb-3' => '3',
                 'mb-4' => '4',
+                'mb-5' => '5',
             ))->set_default_value( 'mb-0' ),
             Field::make('text', 'section_class'),
             Field::make("separator", 'columns_seperator',"Columns"),
