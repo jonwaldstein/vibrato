@@ -18,26 +18,43 @@ Container::make( 'post_meta', 'Page Builder' )//PAGE BUILDER FIELDS
             Field::make('checkbox', 'vertical_align')->set_width(20),
             Field::make('checkbox', 'mobile_center_text')->set_width(20),
             Field::make('checkbox', 'mobile_reverse_columns')->set_width(20),
-            Field::make('text', 'section_class')->set_width(50),
-            Field::make("separator", "section_heading_seperator"),
-            Field::make('text', 'section_heading'),
-            Field::make("select", "section_heading_tag", "Heading Tag")
+            Field::make("select", "section_padding_top")
             ->set_width(50)
             ->add_options(array(
-                'h2' => 'h2',
-                'h3' => 'h3',
-                'h4' => 'h4',
-                'h5' => 'h5',
-                'h6' => 'h6',
-                'p' =>  'p',
-            )),
-            Field::make("select", "content_align", "Heading Alignment")
+                'pt-0' => '0',
+                'pt-1' => '1',
+                'pt-2' => '2',
+                'pt-3' => '3',
+                'pt-4' => '4',
+            ))->set_default_value( 'pt-4' ),
+            Field::make("select", "section_padding_bottom")
             ->set_width(50)
             ->add_options(array(
-                'text-left' => 'Left',
-                'text-center' => 'Center',
-                'text-right' => 'Right',
-            )),
+                'pb-0' => '0',
+                'pb-1' => '1',
+                'pb-2' => '2',
+                'pb-3' => '3',
+                'pb-4' => '4',
+            ))->set_default_value( 'pb-4' ),
+             Field::make("select", "section_margin_top")
+            ->set_width(50)
+            ->add_options(array(
+                'mt-0' => '0',
+                'mt-1' => '1',
+                'mt-2' => '2',
+                'mt-3' => '3',
+                'mt-4' => '4',
+            ))->set_default_value( 'mt-0' ),
+            Field::make("select", "section_margin_bottom")
+            ->set_width(50)
+            ->add_options(array(
+                'mb-0' => '0',
+                'mb-1' => '1',
+                'mb-2' => '2',
+                'mb-3' => '3',
+                'mb-4' => '4',
+            ))->set_default_value( 'mb-0' ),
+            Field::make('text', 'section_class'),
             Field::make("separator", 'columns_seperator',"Columns"),
             Field::make( 'complex', 'columns' )
              ->set_layout('tabbed-horizontal')

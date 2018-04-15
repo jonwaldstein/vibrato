@@ -13,21 +13,13 @@ if (!empty($layouts)):
 		$row_vertical_align = $layout['vertical_align'] ? 'd-flex align-items-center' : null;
 		$row_mobile_reverse_columns = $layout['mobile_reverse_columns'] ? 'd-flex flex-sm-column-reverse' : null;
 
-		$content_align = $layout['content_align'] ? $layout['content_align'] : null;
-		?>
-		<section class="section <?= sprintf('%s %s %s %s',$section_full_width_section,$section_content_contained,$section_mobile_center_text,$section_class); ?> ">
+		$section_padding_top = !empty($layout['section_padding_top']) ? $layout['section_padding_top'] : null;
+		$section_padding_bottom = !empty($layout['section_padding_bottom']) ? $layout['section_padding_bottom'] : null;
 
-				<?php if ( $layout['section_heading'] ): ?>
-					<div class="row row-heading">
-						<div class="col-sm-12 <?= sprintf('%s',$content_align); ?>">
-							<?= sprintf('<%s>%s</%s>',
-								!empty($layout['section_heading_tag']) ? $layout['section_heading_tag'] : null,
-								!empty($layout['section_heading']) ? $layout['section_heading'] : null,
-								!empty($layout['section_heading_tag']) ? $layout['section_heading_tag'] : null
-							)?>
-						</div>
-					</div>
-				<?php endif; ?>
+		$section_margin_top = !empty($layout['section_margin_top']) ? $layout['section_margin_top'] : null;
+		$section_margin_bottom = !empty($layout['section_margin_bottom']) ? $layout['section_margin_bottom'] : null;
+		?>
+		<section class="section <?= sprintf('%s %s %s %s %s %s %s %s',$section_full_width_section,$section_content_contained,$section_mobile_center_text,$section_class, $section_padding_top, $section_padding_bottom, $section_margin_top, $section_margin_bottom); ?> ">
 
 			<div class="row flexible-content <?= sprintf('%s %s',$row_vertical_align,$row_mobile_reverse_columns); ?>">
 
