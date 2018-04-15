@@ -145,6 +145,13 @@ class Setup
     }
 
     wp_enqueue_script('sage/js', Theme::asset_path('scripts/main.js'), ['jquery'], null, true);
+
+    wp_localize_script('sage/js', 'WPREST', array(
+      'root' => esc_url_raw( rest_url() ),
+      'nonce' => wp_create_nonce('wp_rest'),
+      'current_ID' => get_the_ID()
+    ));
+    
   }
 }
 
