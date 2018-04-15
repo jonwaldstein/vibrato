@@ -42,6 +42,7 @@ class Setup
     // http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
     // http://codex.wordpress.org/Function_Reference/add_image_size
     add_theme_support('post-thumbnails');
+    add_image_size( 'logo', '', 100, false );
 
     // Enable post formats
     // http://codex.wordpress.org/Post_Formats

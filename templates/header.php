@@ -7,7 +7,7 @@ $site_logo = function_exists('carbon_get_theme_option') ? carbon_get_theme_optio
  <div class="header navbar navbar-expand-md">
     <div class="container">
        <a class="navbar-brand" href="<?= get_home_url('/'); ?>">
-        <?= $site_logo ? wp_get_attachment_image($site_logo, 'full') : get_bloginfo( 'name' );?>
+        <?= $site_logo ? wp_get_attachment_image($site_logo, 'logo') : get_bloginfo( 'name' );?>
         </a>
       <?php
       wp_nav_menu([
