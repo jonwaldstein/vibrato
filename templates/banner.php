@@ -7,7 +7,7 @@ $banner_sub_heading = carbon_get_the_post_meta('banner_sub_heading');
 $banner_button_text = carbon_get_the_post_meta('banner_button_text');
 $banner_button_link = carbon_get_the_post_meta('banner_button_link');
 ?>
-<div class="jumbotron jumbotron-fluid bg-cover-center bg-overlay" style="background-image: url(<?= $background_image ? $background_image : get_the_post_thumbnail_url();?>);background-color: transparent;">
+<div class="jumbotron jumbotron-fluid bg-cover-center bg-overlay" style="background-image: url(<?= $background_image ? $background_image : get_the_post_thumbnail_url();?>);background-color: #333; background-repeat: no-repeat; background-size: cover; background-position: top center;">
   <div class="container text-center">
     <h1 class="text-white">
         <?= !empty($banner_heading) ? $banner_heading : Theme::title(); ?>
