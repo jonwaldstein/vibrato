@@ -28,7 +28,7 @@ export const store = new Vuex.Store({
   mutations: {
     retrievePosts(state, {posts, postsLoading}) {
       state.posts = posts,
-      state.postsLoading: postsLoading
+      state.postsLoading = postsLoading
     },
   },
   getters: {
