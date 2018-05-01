@@ -23,16 +23,23 @@ final class Theme
 
 	public function add_shortcodes()
 	{
-
+		//add_shortcode( 'custom_shortcode', array($this, 'custom_shortcode'));
 	}
 
 	public function register_custom_post_types()
 	{
-
+		add_action( 'init', function(){
+			//get_template_part('lib/callbacks/cpt/cpt-post');
+		}, 0 );
 	}
 
 	public function register_widgets()
 	{
+		// $this->widget_recent_posts();
+
+		// add_action( 'widgets_init', function(){
+		// 	register_widget( 'widget_recent_posts' );
+		// });
 
 	}
 
