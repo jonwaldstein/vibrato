@@ -140,7 +140,7 @@ final class Theme
 	*/
 	public static function page_builder($current_post_id = '')
 	{
-		get_template_part('templates/page-builder');
+		include(locate_template('templates/page-builder.php'));
 	}
 
 	/**
