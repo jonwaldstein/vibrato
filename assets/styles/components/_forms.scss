@@ -13,3 +13,1056 @@
   @extend .btn;
   @extend .btn-secondary;
 }
+
+/* Forms
+-------------------------------------------------------------- */
+input[type="submit"],
+input[type="button"] {
+  @extend .btn;
+  @extend .btn-primary;
+}
+
+fieldset {
+  @extend .form-group;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"] {
+  @extend .form-control;
+
+  font-size: 0.9375rem;
+}
+
+label {
+  color: $gray-700;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+input[type="file"] {
+  @extend .form-control-file;
+}
+
+select {
+  @extend .custom-select;
+}
+
+.required {
+  color: $red;
+}
+
+/* --------------------------------------------------------------
+# Gravity Forms Bootstrap styling
+-------------------------------------------------------------- */
+.gform_wrapper {
+  text-align: left;
+  position: relative;
+
+  .gfield {
+    @extend .form-group;
+
+    position: relative;
+  }
+
+  /* Type
+  -------------------------------------------------------------- */
+  // Heading
+  .gform_heading {
+    h3.gform_title {
+      margin-bottom: 0;
+    }
+
+    .gform_description {
+      margin-bottom: 1.5em;
+      display: block;
+    }
+  }
+
+  // Field Description
+  .gfield_description {
+    margin-top: 0.5rem;
+    font-size: 0.8125em;
+  }
+
+  // Characters Left
+  .charleft {
+    color: $gray-600;
+    font-size: 0.75em;
+    margin-top: 4px;
+    white-space: nowrap;
+  }
+
+  // Section 
+  .gfield.gsection {
+    padding-top: 1rem;
+
+    h2.gsection_title {
+      border-bottom: $border-width solid $border-color;
+    }
+  }
+
+  // Labels 
+  .hidden_label > label {
+    display: none;
+  }
+
+  /* Validation
+  -------------------------------------------------------------- */
+  .gfield_required {
+    color: $danger;
+  }
+
+  .validation_error,
+  .validation_message {
+    @extend .alert;
+    @extend .alert-primary;
+
+    font-size: 0.875em;
+    padding: 0.125rem 0.25rem;
+  }
+
+  .validation_error {
+    margin-bottom: 0.5rem;
+  }
+
+  .validation_message {
+    display: inline-block;
+    margin-bottom: 0.25rem;
+  }
+
+  select[aria-invalid="true"],
+  textarea[aria-invalid="true"],
+  input[aria-invalid="true"] {
+    border-color: $form-feedback-invalid-color;
+  }
+
+  /* CSS Ready Classes https://www.gravityforms.com/css-ready-classes/
+  -------------------------------------------------------------- */
+  ul.gform_fields {
+    @extend .list-unstyled;
+
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 0;
+
+    .gfield {
+      width: 100%;
+
+      @include media-breakpoint-up(md) {
+        &.gf_left_half {
+          margin-right: 2%;
+        }
+
+        &.gf_right_half,
+        &.gf_left_half {
+          width: 49%;
+
+          .small,
+          .medium {
+            width: 100%;
+          }
+        }
+
+        &.gf_left_third,
+        &.gf_middle_third {
+          margin-right: 2%;
+        }
+
+        &.gf_left_third,
+        &.gf_middle_third,
+        &.gf_right_third {
+          width: 32%;
+
+          .small,
+          .medium {
+            width: 100%;
+          }
+        }
+
+        &.gf_first_quarter,
+        &.gf_second_quarter,
+        &.gf_third_quarter {
+          margin-right: 2%;
+        }
+
+        &.gf_first_quarter,
+        &.gf_second_quarter,
+        &.gf_third_quarter,
+        &.gf_fourth_quarter {
+          width: 23.5%;
+
+          .small,
+          .medium {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  /* Input Width / Height
+  -------------------------------------------------------------- */
+  select,
+  input {
+    @include media-breakpoint-up(lg) {
+      &.small {
+        width: 33.3%;
+      }
+
+      &.medium {
+        width: 50%;
+      }
+    }
+  }
+
+  .textarea {
+    &.small {
+      height: 80px;
+      font-size: 100%;
+    }
+
+    &.medium {
+      height: 100px;
+
+      @include media-breakpoint-up(lg) {
+        height: 140px;
+      }
+    }
+
+    &.large {
+      height: 140px;
+
+      @include media-breakpoint-up(lg) {
+        height: 240px;
+      }
+    }
+  }
+
+  /* Complex
+  -------------------------------------------------------------- */
+  .ginput_complex {
+
+    // Name field
+    &.ginput_container_name {
+      @extend .form-row;
+
+      > span {
+        @extend .col;
+      }
+
+      .name_prefix,
+      .name_middle,
+      .name_suffix {
+        flex-grow: 0.4;
+      }
+    }
+
+    // Adress field
+    &.ginput_container_address {
+      display: flex;
+      flex-flow: row wrap;
+
+      .ginput_right,
+      .ginput_left,
+      .ginput_full {
+        @extend .form-group;
+      }
+
+      .ginput_full {
+        width: 100%;
+      }
+
+      .ginput_left {
+        margin-right: 2%;
+      }
+
+      .ginput_left,
+      .ginput_right {
+        width: 100%;
+
+        @include media-breakpoint-up(sm) {
+          width: 49%;
+        }
+      }
+    }
+  }
+
+  /* Date- & Timefields
+  -------------------------------------------------------------- */
+  .datepicker.datepicker_no_icon.hasDatepicker {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' version='1'%3E%3Cpath fill='%23D0D0D0' d='M15 6V3h-2v1a1 1 0 1 1-2 0V3H5v1a1 1 0 1 1-2 0V3H1v3h14zm0 1H1v8h14V7zm-2-5h2l1 1v12l-1 1H1l-1-1V3l1-1h2V1a1 1 0 1 1 2 0v1h6V1a1 1 0 1 1 2 0v1z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 16px) center;
+  }
+
+  .clear-multi {
+    display: flex;
+
+    > div:not(:last-child) {
+      margin-right: ($spacer / 2);
+    }
+
+    .gfield_time_hour {
+      i {
+        float: right;
+        font-style: normal;
+      }
+    }
+  }
+
+  /* Radio & Checkboxes
+  -------------------------------------------------------------- */
+  ul {
+    &.gfield_radio {
+      @extend .list-unstyled;
+
+      li {
+        @extend .custom-control;
+        @extend .custom-radio;
+
+        input[type="radio"] {
+          @extend .custom-control-input;
+
+          + label {
+            @extend .custom-control-label;
+          }
+        }
+      }
+
+      // 'Other' field
+      input[type="text"] {
+        padding: 0.25rem;
+      }
+    }
+
+    &.gfield_checkbox {
+      @extend .list-unstyled;
+
+      li {
+        @extend .custom-control;
+        @extend .custom-checkbox;
+
+        input[type="checkbox"] {
+          @extend .custom-control-input;
+
+          + label {
+            @extend .custom-control-label;
+
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+
+  /* File upload
+  -------------------------------------------------------------- */
+  .ginput_container_fileupload {
+    .gform_drop_area {
+      background: rgba(0, 0, 0, 0.02);
+      border-radius: $border-radius;
+      border: $border-width dashed $gray-500;
+      color: $gray-500;
+      margin-bottom: $spacer;
+      padding: ($spacer * 1.5);
+      text-align: center;
+    }
+
+    .gform_drop_instructions {
+      display: block;
+      margin-bottom: ($spacer / 1.5);
+    }
+
+    .gform_delete {
+      vertical-align: middle;
+      cursor: pointer;
+    }
+
+    .validation_message {
+      padding: 0;
+      background-color: transparent;
+      border-color: transparent;
+
+      ul {
+        @extend .list-unstyled;
+
+        li {
+          @extend .alert;
+          @extend .alert-primary;
+        }
+      }
+    }
+  }
+
+  /* Lists
+  -------------------------------------------------------------- */
+  .gfield_list {
+    width: 100%;
+
+    .gfield_list_cell:not(:first-child) {
+      padding-left: ($spacer / 2);
+    }
+
+    .gfield_list_icons {
+      padding-left: 10px;
+      width: 48px;
+    }
+
+    th {
+      font-size: 0.8125rem;
+    }
+  }
+
+  /* Hidden
+  -------------------------------------------------------------- */
+  input[type=hidden],
+  input.gform_hidden,
+  .gform_hidden,
+  .gf_hidden {
+    display: none !important;
+    max-height: 1px !important;
+    overflow: hidden;
+  }
+
+  /* Progresbar
+  -------------------------------------------------------------- */
+  .gf_progressbar_wrapper {
+    @extend .form-group;
+
+    .gf_progressbar_title {
+      color: $gray-500;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+    }
+
+    .gf_progressbar {
+      @extend .progress;
+
+      .gf_progressbar_percentage {
+        @extend .progress-bar;
+        @extend .progress-bar-striped;
+        @extend .progress-bar-animated;
+
+        &.percentbar_blue {
+          @extend .bg-primary;
+        }
+
+        &.percentbar_gray {
+          @extend .bg-secondary;
+        }
+
+        &.percentbar_green {
+          @extend .bg-success;
+        }
+
+        &.percentbar_orange {
+          @extend .bg-warning;
+        }
+
+        &.percentbar_red {
+          @extend .bg-danger;
+        }
+      }
+    }
+  }
+
+  /* Footer
+  -------------------------------------------------------------- */
+  .gform_page_footer,
+  .gform_footer {
+    @extend .form-group;
+  }
+
+  /* Custom spinner. (Hide original spinner using snippet)
+  -------------------------------------------------------------- */
+  @keyframes ajax-spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .gform_ajax_spinner {
+    display: inline-block;
+    margin-left: 1rem;
+    border: 4px solid rgba($black, 0.1);
+    border-left-color: $primary;
+    border-radius: 50%;
+    width: 1.25rem;
+    height: 1.25rem;
+    animation: ajax-spinner 1.2s linear infinite;
+  }
+}
+
+/* Confirmation Message
+-------------------------------------------------------------- */
+.gform_confirmation_message {
+  @extend .alert;
+  @extend .alert-primary;
+
+  margin-top: 10px;
+}
+
+/* --------------------------------------------------------------
+# Datepicker
+-------------------------------------------------------------- */
+.ui-datepicker {
+  background-color: $white;
+  border: $border-width solid $input-border-color;
+  display: none;
+  font-size: 0.875rem;
+
+  .ui-datepicker-header {
+    display: flex;
+  }
+
+  .ui-datepicker-prev,
+  .ui-datepicker-next {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    width: 30px;
+
+    .ui-icon {
+      @extend .sr-only;
+    }
+  }
+
+  .ui-datepicker-prev {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='18'%3E%3Cpath fill='none' stroke='%23979797' stroke-linecap='square' d='M10 0L1 9l9 9'/%3E%3C/svg%3E");
+  }
+
+  .ui-datepicker-next {
+    order: 1;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='18'%3E%3Cpath fill='none' stroke='%23979797' stroke-linecap='square' d='M1 0l9 9-9 9'/%3E%3C/svg%3E");
+  }
+
+  .ui-datepicker-title {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    width: calc(100% - 60px);
+
+    > select {
+      @extend .custom-select;
+
+      height: min-content;
+      margin: 10px 5px;
+    }
+  }
+
+  .ui-datepicker-calendar {
+    @extend .table;
+    @extend .table-sm;
+
+    margin-bottom: 0;
+
+    td,
+    th {
+      text-align: center;
+      padding: 0;
+
+      a {
+        display: inline-block;
+        padding: 0.4rem;
+      }
+    }
+  }
+}
+
+/* --------------------------------------------------------------
+# Chosen (Included in Gravity Forms for extend select UI)
+# Chosen is a library for making long, unwieldy select boxes more user friendly.
+# https://harvesthq.github.io/chosen/
+-------------------------------------------------------------- */
+
+/* stylelint-disable no-descending-specificity */
+$chosen-sprite: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='37'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath fill='%23888' d='M48.5 4.5L52 1l-1-1-3.5 3.5L44 0l-1 1 3.5 3.5L43 8l1 1 3.5-3.5L51 9l1-1z'/%3E%3Cpath fill='%23464646' d='M48.5 15.5L52 12l-1-1-3.5 3.5L44 11l-1 1 3.5 3.5L43 19l1 1 3.5-3.5L51 20l1-1z'/%3E%3Cpath fill='%23888' fill-rule='nonzero' d='M41.1 33.7l2.7 2.7c.4.4 1.2.4 1.6 0 .4-.5.4-1.2 0-1.6l-2.7-2.7c1.1-1.8.9-4.2-.7-5.7a4.7 4.7 0 1 0-.9 7.3zm-4.3-6c1-1 2.8-1 3.9 0 1 1 1 2.8 0 4a3 3 0 0 1-4 0 3 3 0 0 1 0-4z'/%3E%3Cpath fill='%23888' d='M2 7h7l-3.5 5zm25 5h-7l3.5-5z'/%3E%3C/g%3E%3C/svg%3E") !default;
+
+.chosen-container-single {
+  .chosen-single {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 0 0 0 8px;
+    height: 32px;
+    border: 1px solid $input-border-color;
+    border-radius: 5px;
+    background-color: #fff;
+    background-image: linear-gradient(#fff 20%, #f6f6f6 50%, #eee 52%, #f4f4f4 100%);
+    background-clip: padding-box;
+    box-shadow: 0 0 3px #fff inset, 0 1px 1px rgba(#000, 0.1);
+    color: #444;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: 31px;
+
+    input[type="text"] {
+      cursor: pointer;
+      opacity: 0;
+      position: absolute;
+    }
+  }
+
+  .chosen-default {
+    color: #999;
+  }
+
+  .chosen-single span {
+    display: block;
+    overflow: hidden;
+    margin-right: 26px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .chosen-single-with-deselect span {
+    margin-right: 38px;
+  }
+
+  .chosen-single abbr {
+    position: absolute;
+    top: 6px;
+    right: 26px;
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: $chosen-sprite -42px 1px no-repeat;
+    font-size: 1px;
+
+    &:hover {
+      background-position: -42px -10px;
+    }
+  }
+
+  &.chosen-disabled .chosen-single abbr:hover {
+    background-position: -42px -10px;
+  }
+
+  .chosen-single div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 18px;
+    height: 100%;
+
+    b {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: $chosen-sprite no-repeat 0 6px;
+    }
+  }
+
+  .chosen-search {
+    position: relative;
+    z-index: 1010;
+    margin: 0;
+    padding: 3px 4px;
+    white-space: nowrap;
+
+    input[type="text"] {
+      margin: 1px 0;
+      padding: 4px 20px 4px 5px;
+      width: 100%;
+      height: auto;
+      outline: 0;
+      border: 1px solid $input-border-color;
+      background: $chosen-sprite no-repeat 100% -20px;
+      font-size: 1em;
+      font-family: sans-serif;
+      line-height: normal;
+      border-radius: 0;
+    }
+  }
+
+  .chosen-drop {
+    margin-top: -1px;
+    border-radius: 0 0 4px 4px;
+    background-clip: padding-box;
+  }
+
+  &.chosen-container-single-nosearch .chosen-search {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+  }
+}
+
+.chosen-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 13px;
+  user-select: none;
+  width: 100% !important;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .chosen-drop {
+    position: absolute;
+    top: 100%;
+    z-index: 1010;
+    width: 100%;
+    border: 1px solid $input-border-color;
+    border-top: 0;
+    background: #fff;
+    box-shadow: 0 4px 5px rgba(#000, 0.15);
+    display: none;
+  }
+
+  &.chosen-with-drop .chosen-drop {
+    display: block;
+  }
+
+  a {
+    cursor: pointer;
+  }
+
+  .search-choice,
+  .chosen-single {
+    .group-name {
+      margin-right: 4px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-weight: normal;
+      color: #999;
+
+      &::after {
+        content: ":";
+        padding-left: 2px;
+        vertical-align: top;
+      }
+    }
+  }
+}
+
+.chosen-container .chosen-results {
+  color: #444;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0 4px 4px 0;
+  padding: 0 0 0 4px;
+  max-height: 240px;
+  -webkit-overflow-scrolling: touch;
+
+  li {
+    display: none;
+    margin: 0;
+    padding: 5px 6px;
+    list-style: none;
+    line-height: 15px;
+    word-wrap: break-word;
+    -webkit-touch-callout: none;
+
+    &.active-result {
+      display: list-item;
+      cursor: pointer;
+    }
+
+    &.disabled-result {
+      display: list-item;
+      color: #ccc;
+      cursor: default;
+    }
+
+    &.highlighted {
+      background-color: #3875d7;
+      background-image: linear-gradient(#3875d7 20%, #2a62bc 90%);
+      color: #fff;
+    }
+
+    &.no-results {
+      color: #777;
+      display: list-item;
+      background: #f4f4f4;
+    }
+
+    &.group-result {
+      display: list-item;
+      font-weight: bold;
+      cursor: default;
+    }
+
+    &.group-option {
+      padding-left: 15px;
+    }
+
+    em {
+      font-style: normal;
+      text-decoration: underline;
+    }
+  }
+}
+
+.chosen-container-multi {
+  .chosen-choices {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0 5px;
+    width: 100%;
+    height: auto;
+    border: 1px solid $input-border-color;
+    background-color: #fff;
+    background-image: linear-gradient(#eee 1%, #fff 15%);
+    cursor: text;
+  }
+
+  .chosen-choices li {
+    float: left;
+    list-style: none;
+
+    &.search-field {
+      margin: 0;
+      padding: 0;
+      white-space: nowrap;
+
+      input[type="text"] {
+        margin: 1px 0;
+        padding: 0;
+        height: 25px;
+        outline: 0;
+        border: 0 !important;
+        background: transparent !important;
+        box-shadow: none;
+        color: #999;
+        font-size: 100%;
+        font-family: sans-serif;
+        line-height: normal;
+        border-radius: 0;
+        width: 25px;
+      }
+    }
+
+    &.search-choice-disabled {
+      padding-right: 5px;
+      border: 1px solid #ccc;
+      background-color: #e4e4e4;
+      background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%);
+      color: #666;
+    }
+
+    &.search-choice-focus {
+      background: #d4d4d4;
+
+      .search-choice-close {
+        background-position: -42px -10px;
+      }
+    }
+
+    &.search-choice {
+      position: relative;
+      margin: 3px 5px 3px 0;
+      padding: 3px 20px 3px 5px;
+      border: 1px solid $input-border-color;
+      max-width: 100%;
+      border-radius: 3px;
+      background-color: #eee;
+      background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%);
+      background-size: 100% 19px;
+      background-repeat: repeat-x;
+      background-clip: padding-box;
+      box-shadow: 0 0 2px #fff inset, 0 1px 0 rgba(#000, 0.05);
+      color: #333;
+      line-height: 13px;
+      cursor: default;
+
+      span {
+        word-wrap: break-word;
+      }
+
+      .search-choice-close {
+        position: absolute;
+        top: 4px;
+        right: 3px;
+        display: block;
+        width: 12px;
+        height: 12px;
+        background: $chosen-sprite -42px 1px no-repeat;
+        font-size: 1px;
+
+        &:hover {
+          background-position: -42px -10px;
+        }
+      }
+    }
+  }
+
+  .chosen-results {
+    margin: 0;
+    padding: 0;
+  }
+
+  .chosen-drop .result-selected {
+    display: list-item;
+    color: #ccc;
+    cursor: default;
+  }
+}
+
+.chosen-disabled {
+  opacity: 0.5 !important;
+  cursor: default;
+
+  .chosen-single {
+    cursor: default;
+  }
+
+  .chosen-choices .search-choice .search-choice-close {
+    cursor: default;
+  }
+}
+
+.chosen-container-active {
+  .chosen-single {
+    border: 1px solid $secondary;
+    box-shadow: 0 0 5px rgba(#000, 0.3);
+  }
+
+  &.chosen-with-drop {
+    .chosen-single {
+      border: 1px solid $input-border-color;
+      -moz-border-radius-bottomright: 0;
+      border-bottom-right-radius: 0;
+      -moz-border-radius-bottomleft: 0;
+      border-bottom-left-radius: 0;
+      background-image: linear-gradient(#eee 20%, #fff 80%);
+      box-shadow: 0 1px 0 #fff inset;
+    }
+
+    .chosen-single div {
+      border-left: none;
+      background: transparent;
+
+      b {
+        background-position: -18px 6px;
+      }
+    }
+  }
+
+  .chosen-choices {
+    border: 1px solid $secondary;
+    box-shadow: 0 0 5px rgba(#000, 0.3);
+
+    li.search-field input[type="text"] {
+      color: #222 !important;
+    }
+  }
+}
+
+.chosen-rtl {
+  text-align: right;
+
+  .chosen-single {
+    overflow: visible;
+    padding: 0 8px 0 0;
+  }
+
+  .chosen-single span {
+    margin-right: 0;
+    margin-left: 26px;
+    direction: rtl;
+  }
+
+  .chosen-single-with-deselect span {
+    margin-left: 38px;
+  }
+
+  .chosen-single div {
+    right: auto;
+    left: 3px;
+  }
+
+  .chosen-single abbr {
+    right: auto;
+    left: 26px;
+  }
+
+  .chosen-choices li {
+    float: right;
+
+    &.search-field input[type="text"] {
+      direction: rtl;
+    }
+
+    &.search-choice {
+      margin: 3px 5px 3px 0;
+      padding: 3px 5px 3px 19px;
+
+      .search-choice-close {
+        right: auto;
+        left: 4px;
+      }
+    }
+  }
+
+  &.chosen-container-single .chosen-results {
+    margin: 0 0 4px 4px;
+    padding: 0 4px 0 0;
+  }
+
+  .chosen-results li.group-option {
+    padding-right: 15px;
+    padding-left: 0;
+  }
+
+  &.chosen-container-active.chosen-with-drop .chosen-single div {
+    border-right: none;
+  }
+
+  .chosen-search input[type="text"] {
+    padding: 4px 5px 4px 20px;
+    background: $chosen-sprite no-repeat -30px -20px;
+    direction: rtl;
+  }
+
+  &.chosen-container-single {
+    .chosen-single div b {
+      background-position: 6px 2px;
+    }
+
+    &.chosen-with-drop {
+      .chosen-single div b {
+        background-position: -12px 2px;
+      }
+    }
+  }
+}
+
+/* @group Retina compatibility */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx) {
+  .chosen-rtl .chosen-search input[type="text"],
+  .chosen-container-single .chosen-single abbr,
+  .chosen-container-single .chosen-single div b,
+  .chosen-container-single .chosen-search input[type="text"],
+  .chosen-container-multi .chosen-choices .search-choice .search-choice-close,
+  .chosen-container .chosen-results-scroll-down span,
+  .chosen-container .chosen-results-scroll-up span {
+    background-image: $chosen-sprite !important;
+    background-size: 52px 37px !important;
+    background-repeat: no-repeat !important;
+  }
+}

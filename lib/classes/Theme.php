@@ -9,6 +9,8 @@ final class Theme
 		add_filter('template_include', ['Roots\\Sage\\Classes\\Wrapper', 'wrap'], 109);
 		add_filter('body_class', array($this,'body_class'));
 		add_filter('excerpt_more', array($this, 'excerpt_more'));
+		add_filter( 'mce_buttons_2', array($this,'custom_tinymce_buttons'));
+		add_filter( 'tiny_mce_before_init', array($this,'custom_tinymce_text_sizes'));
 	}
 
 	public function add_actions()
@@ -129,8 +131,28 @@ final class Theme
 	/**
 	* Page Builder
 	*/
-	public static function page_builder()
+	public static function page_builder($current_post_id = '')
 	{
 		get_template_part('templates/page-builder');
+	}
+
+	/**
+	* Enable font size & font family selects in the editor
+	*/
+	public function custom_tinymce_buttons( $buttons ) {
+		array_unshift( $buttons, 'fontselect' ); // Add Font Select
+		array_unshift( $buttons, 'fontsizeselect' ); // Add Font Size Select
+		return $buttons;
+	}
+
+/**
+	* Enable font size & font family selects in the editor
+	*/
+	public function custom_tinymce_text_sizes($initArray){
+		$initArray['fontsize_formats'] = "12px 14px 16px 18px 24px 28px 32px 36px";
+		$initArray['font_formats'] = 'Roboto=Roboto;';
+		$initArray['theme_advanced_disable'] = 'underline,spellchecker,wp_help';
+		//$initArray['textcolor_map'] = 'ffffff,02253b,a58343,c29b50,a0b0b5,5f828b,393b44,474a53,6a6c7e,83848d';
+		return $initArray;
 	}
 }
