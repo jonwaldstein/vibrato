@@ -28,6 +28,13 @@ final class Theme
 		//add_shortcode( 'custom_shortcode', array($this, 'custom_shortcode'));
 	}
 
+	public function register_custom_taxonomies()
+	{
+		add_action( 'init', function(){
+			get_template_part('lib/callbacks/ct/ct-sectionpage');
+		});
+	}
+
 	public function register_custom_post_types()
 	{
 		add_action( 'init', function(){
