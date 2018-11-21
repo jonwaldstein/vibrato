@@ -6,7 +6,6 @@ import { store } from './store';
 
 // Import custom modules
 import App from'./modules/app.js';
-import Hamburgers from'./modules/hamburgers.js';
 
 // Import custom components
 import Posts from './components/Posts.vue';
@@ -14,14 +13,13 @@ import Posts from './components/Posts.vue';
 
 //Initiate Classes Here
 const app = new App();
-const hamburgers = new Hamburgers();
 
 
 // Run Class Based Scripts Here
 function run() {
 
   app.init();
-  hamburgers.click(".hamburger");
+  app.hamburgers(".hamburger");
 
   const appPosts = new Vue({ 
       el: '#appPosts',
