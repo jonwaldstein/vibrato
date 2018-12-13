@@ -3,19 +3,19 @@
   "type": "wordpress-theme",
   "license": "MIT",
   "description": "A Wordpress Theme Boilerplate inspired by Roots -Sage 8 to include OOP, Laravel Mix, Vue.js, & Carbon Fields",
-  "homepage": "https://github.com/Jpwaldstein/sage-vibrato",
+  "homepage": "https://github.com/Jpwaldstein/vibrato",
   "authors": [
     {
       "name": "Jon Waldstein",
       "email": "jpwaldstein@gmail.com",
-      "homepage": "https://github.com/Jpwaldstein/sage-vibrato"
+      "homepage": "https://github.com/Jpwaldstein/vibrato"
     }
   ],
   "keywords": [
     "wordpress"
   ],
   "support": {
-    "issues": "https://github.com/Jpwaldstein/sage-vibrato/issues"
+    "issues": "https://github.com/Jpwaldstein/vibrato/issues"
   },
   "require": {
     "php": ">=5.4.0",
