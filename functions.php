@@ -10,8 +10,8 @@ if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
 /**
  * Initialize all Theme Functions
  */
-if ( class_exists( 'Roots\\Sage\\Classes\\Theme' ) ) {
-  $Theme = new Roots\Sage\Classes\Theme();
+if ( class_exists( 'ZGM\\Vibrato\\Classes\\Theme' ) ) {
+  $Theme = new ZGM\Vibrato\Classes\Theme();
   $Theme->add_filters();
   $Theme->add_actions();
   $Theme->register_custom_taxonomies();
@@ -24,7 +24,7 @@ if ( class_exists( 'Roots\\Sage\\Classes\\Theme' ) ) {
 /**
  * Initialize all the Carbon Fields
  */
-if ( class_exists( 'Roots\\Sage\\Classes\\ThemeCarbonFields' ) ) {
+if ( class_exists( 'ZGM\\Vibrato\\Classes\\ThemeCarbonFields' ) ) {
 
   add_action( 'after_setup_theme', function(){
     // Require once the Composer Autoload
@@ -33,6 +33,6 @@ if ( class_exists( 'Roots\\Sage\\Classes\\ThemeCarbonFields' ) ) {
     }
   });
 
-  $ThemeCarbonFields = new Roots\Sage\Classes\ThemeCarbonFields();
+  $ThemeCarbonFields = new ZGM\Vibrato\Classes\ThemeCarbonFields();
   $ThemeCarbonFields->register_fields();
 }

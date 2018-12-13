@@ -1,5 +1,5 @@
 <?php
-use Roots\Sage\Classes\Theme;
+use ZGM\Vibrato\Classes\Theme;
 ?>
 <?php while (have_posts()) : the_post(); ?>
 

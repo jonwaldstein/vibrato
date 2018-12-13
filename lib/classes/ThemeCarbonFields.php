@@ -1,5 +1,5 @@
 <?php
-namespace Roots\Sage\Classes;
+namespace ZGM\Vibrato\Classes;
 
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;

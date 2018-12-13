@@ -1,5 +1,5 @@
 <?php
-use Roots\Sage\Classes\BootstrapNavwalker;
+use ZGM\Vibrato\Classes\BootstrapNavwalker;
 $site_logo = function_exists('carbon_get_theme_option') ? carbon_get_theme_option('site_logo') : null;
 ?>
 <header>

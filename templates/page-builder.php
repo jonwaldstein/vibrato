@@ -1,5 +1,5 @@
 <?php
-use Roots\Sage\Classes\Theme;
+use ZGM\Vibrato\Classes\Theme;
 $layouts = carbon_get_post_meta($current_post_id ? $current_post_id : get_the_ID(), 'page_builder');
 $hide_banner = carbon_get_the_post_meta('hide_banner');
 if (!empty($layouts)):

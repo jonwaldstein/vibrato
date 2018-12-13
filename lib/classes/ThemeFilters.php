@@ -1,11 +1,11 @@
 <?php
-namespace Roots\Sage\Classes;
+namespace ZGM\Vibrato\Classes;
 
 class ThemeFilters
 {
 	public function init()
   {
-  		add_filter('template_include', ['Roots\\Sage\\Classes\\Wrapper', 'wrap'], 109);
+  		add_filter('template_include', ['ZGM\\Vibrato\\Classes\\Wrapper', 'wrap'], 109);
 			add_filter('body_class', array($this,'body_class'));
 			add_filter('excerpt_more', array($this, 'excerpt_more'));
 			add_filter( 'mce_buttons_2', array($this,'custom_tinymce_buttons'));

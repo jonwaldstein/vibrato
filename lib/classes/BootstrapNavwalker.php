@@ -1,5 +1,5 @@
 <?php
-namespace Roots\Sage\Classes;
+namespace ZGM\Vibrato\Classes;
 /**
  * Class Name: bs4Navwalker
  * GitHub URI: https://github.com/dupkey/bs4navwalker

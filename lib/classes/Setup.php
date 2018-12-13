@@ -1,5 +1,5 @@
 <?php
-namespace Roots\Sage\Classes;
+namespace ZGM\Vibrato\Classes;
 
 class Setup
 {

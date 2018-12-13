@@ -1,6 +1,6 @@
 <?php
-use Roots\Sage\Classes\Wrapper;
-use Roots\Sage\Classes\Setup;
+use ZGM\Vibrato\Classes\Wrapper;
+use ZGM\Vibrato\Classes\Setup;
 
 ?>
 

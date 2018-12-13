@@ -1,12 +1,12 @@
 <?php
-namespace Roots\Sage\Classes;
+namespace ZGM\Vibrato\Classes;
 
 
 final class Theme
 {
 	public function add_filters()
 	{
-		if (class_exists('Roots\\Sage\\Classes\\ThemeFilters')){
+		if (class_exists('ZGM\\Vibrato\\Classes\\ThemeFilters')){
 			$Filters = new ThemeFilters();
 			$Filters->init();
 		}
@@ -14,11 +14,11 @@ final class Theme
 
 	public function add_actions()
 	{
-		if (class_exists('Roots\\Sage\\Classes\\ThemeActions')){
+		if (class_exists('ZGM\\Vibrato\\Classes\\ThemeActions')){
 			$Actions = new ThemeActions();
-			$Filters->init();
+			$Actions->init();
 		}
-		if (class_exists('Roots\\Sage\\Classes\\Setup')){
+		if (class_exists('ZGM\\Vibrato\\Classes\\Setup')){
 			$Setup = new Setup();
 			$Setup->init();
 		}
