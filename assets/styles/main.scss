@@ -1,18 +1,23 @@
+//Local scss files run before everything
 @import "common/variables";
 @import "overrides/hamburgers";
-//Node Modules
+
+//Tailwindcss
+//https://tailwindcss.com/
+//https://nerdcave.com/tailwind-cheat-sheet
 @import "~tailwindcss/base";
 @import "~tailwindcss/components";
 @import "~tailwindcss/utilities";
+
+//Node Modules
 @import "~hamburgers/_sass/hamburgers/hamburgers";
 @import "~sass-rem/rem";
 
-
+//Local scss files
 @import "common/global";
 @import "common/type";
 @import "components/buttons";
 @import "components/forms";
-@import "components/wp-classes";
 @import "layouts/header";
 @import "layouts/sidebar";
 @import "layouts/footer";

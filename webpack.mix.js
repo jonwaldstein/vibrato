@@ -20,14 +20,16 @@ mix.js('assets/scripts/main.js', 'dist/scripts/')
    .copy('assets/images/', 'dist/images/')
    .options({
     processCssUrls: false,
-    postCss: [ tailwindcss('assets/scripts/tailwind.config.js') ],
-  })
+    postCss: [ 
+      tailwindcss('assets/scripts/tailwind.config.js') 
+    ],
+  });
 
 if (!mix.inProduction()) {
     mix.webpackConfig({
         devtool: 'source-map'
     })
-    .sourceMaps()
+    .sourceMaps();
 }
 // Full API
 // mix.js(src, output);
