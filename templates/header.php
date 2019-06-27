@@ -2,8 +2,8 @@
 use ZGM\Vibrato\Classes\WalkerNav;
 $site_logo = function_exists('carbon_get_theme_option') ? carbon_get_theme_option('site_logo') : null;
 ?>
-<header>
-<nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+<header class="w-full bg-teal-500">
+<nav class="flex items-center justify-between flex-wrap px-6 py-6 lg:py-6 lg:px-0 container mx-auto">
   <a href="/" class="flex items-center flex-shrink-0 text-white mr-6">
     <span class="font-semibold text-xl tracking-tight">
       <?php if ( has_custom_logo() ) : ?>

@@ -18,7 +18,7 @@ use ZGM\Vibrato\Classes\Setup;
       get_template_part('templates/header');
       get_template_part('templates/banner');
     ?>
-    <div class="wrap container mx-auto">
+    <div class="wrap container mx-auto px-6 py-6 lg:py-6 lg:px-0">
       <div class="content row">
         <main class="main">
           <?php include Wrapper::template_path(); ?>
