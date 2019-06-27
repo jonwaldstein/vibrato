@@ -22,13 +22,15 @@ function run() {
   app.navigation(".js-trigger-navigation",".js-navigation");
   app.navigation_sub_menu(".menu-item-has-children");
 
-  const appPosts = new Vue({ 
-      el: '#appPosts',
-      store: store,
-      components: {
-        Posts
-      }
-  });
+  if (document.getElementById('#appPosts')){
+    const appPosts = new Vue({ 
+        el: '#appPosts',
+        store: store,
+        components: {
+          Posts
+        }
+    });
+  }
 
 }
 
