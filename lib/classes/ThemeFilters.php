@@ -65,10 +65,10 @@ class ThemeFilters
 	public function nav_menu_css_class($classes, $item, $args, $depth){
 		//Parent Item Classes
 		if ($depth === 0){
-			$classes[] = 'relative block lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4';
+			$classes[] = 'relative block lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 transition-all transition-100';
 		//Children Item Classes
 		} else {
-			$classes[] = 'relative block py-4 px-1 lg:inline-block text-black hover:text-grey';
+			$classes[] = 'relative block py-4 px-1 lg:inline-block text-black hover:text-grey transition-all transition-100';
 		}
 		return $classes;
 	}
