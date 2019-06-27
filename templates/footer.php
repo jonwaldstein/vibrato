@@ -18,7 +18,7 @@
 	  	<?php if (!empty($footer_copy)): ?>
 				<?= "<small class='text-white'>{$date} {$footer_copy}</small>"; ?>
 			<?php else: ?>
-				<div class="container mx-auto py-2">
+				<div class="container mx-auto py-2 px-6 lg:px-0">
 					<small class="text-white">&copy; <?= $date; ?></small>
 				</div>
 			<?php endif; ?>
