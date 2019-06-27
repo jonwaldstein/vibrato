@@ -10,6 +10,8 @@ class ThemeFilters
 			add_filter('excerpt_more', array($this, 'excerpt_more'));
 			add_filter( 'mce_buttons_2', array($this,'custom_tinymce_buttons'));
 			add_filter( 'tiny_mce_before_init', array($this,'custom_tinymce_text_sizes'));
+			add_filter( 'nav_menu_css_class', array($this,'nav_menu_css_class'), 10, 4 ); 
+			add_filter( 'nav_menu_submenu_css_class', array($this,'nav_menu_submenu_css_class'), 10, 4 ); 
   }
 
   /**
@@ -58,5 +60,23 @@ class ThemeFilters
 		$initArray['theme_advanced_disable'] = 'underline,spellchecker,wp_help';
 		//$initArray['textcolor_map'] = 'ffffff,02253b,a58343,c29b50,a0b0b5,5f828b,393b44,474a53,6a6c7e,83848d';
 		return $initArray;
+	}
+
+	public function nav_menu_css_class($classes, $item, $args, $depth){
+		//Parent Item Classes
+		if ($depth === 0){
+			$classes[] = 'relative block lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4';
+		//Children Item Classes
+		} else {
+			$classes[] = 'relative block py-4 px-1 lg:inline-block text-black hover:text-grey';
+		}
+		return $classes;
+	}
+
+	public function nav_menu_submenu_css_class($classes, $args, $depth){
+
+		$classes[] = 'relative hidden lg:absolute block bg-white';
+
+		return $classes;
 	}
 }

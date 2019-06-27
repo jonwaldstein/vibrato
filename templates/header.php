@@ -1,38 +1,37 @@
 <?php
-use ZGM\Vibrato\Classes\BootstrapNavwalker;
+use ZGM\Vibrato\Classes\WalkerNav;
 $site_logo = function_exists('carbon_get_theme_option') ? carbon_get_theme_option('site_logo') : null;
 ?>
 <header>
-
- <div class="header navbar navbar-expand-md">
-    <div class="container">
-       <a class="navbar-brand" href="<?= get_home_url('/'); ?>">
-        <?php if ( has_custom_logo() ) : ?>
-          <div class="site-logo"><?php the_custom_logo(); ?></div>
-        <?php else: ?>
-          <?= $site_logo ? wp_get_attachment_image($site_logo, 'logo') : get_bloginfo( 'name' );?>
-        <?php endif; ?>
-        </a>
-      <?php
-      wp_nav_menu([
-        'menu'            => 'primary_navigation',
-        'theme_location'  => 'primary_navigation',
-        'container'       => 'nav',
-        'container_id'    => 'primary-navigation',
-        'container_class' => 'collapse navbar-collapse',
-        'menu_id'         => false,
-        'menu_class'      => 'navbar-nav ml-auto',
-        'depth'           => 2,
-        'fallback_cb'     => 'BootstrapNavwalker::fallback',
-        'walker'          => new BootstrapNavwalker()
-      ]);
-      ?>
-      <button class="hamburger hamburger--squeeze navbar-toggler" type="button" data-toggle="collapse" data-target="#primary-navigation" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
-    </div>
+<nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+  <a href="/" class="flex items-center flex-shrink-0 text-white mr-6">
+    <span class="font-semibold text-xl tracking-tight">
+      <?php if ( has_custom_logo() ) : ?>
+        <div class="site-logo"><?php the_custom_logo(); ?></div>
+      <?php else: ?>
+        <?= $site_logo ? wp_get_attachment_image($site_logo, 'logo') : get_bloginfo( 'name' );?>
+      <?php endif; ?>
+    </span>
+  </a>
+  <div class="block lg:hidden">
+    <button class="hamburger js-hamburger js-trigger-navigation hamburger--squeeze" type="button" aria-label="Toggle navigation">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
   </div>
-
+  <nav id="site-navigation" class="js-navigation w-full block flex-grow hidden lg:flex lg:items-center lg:w-auto" role="navigation">
+  <?php
+    if ( has_nav_menu( 'primary_navigation' ) ) :
+      wp_nav_menu([
+      'theme_location'  => 'primary_navigation',
+      'container'       => 'ul',
+      'container_class' => 'text-sm lg:flex-grow',
+      'menu_id'         => 'primary-navigation-menu',
+      'menu_class'      => 'text-sm lg:flex-grow'
+    ]);
+    endif;
+    ?>
+  </nav>
+</nav>
 </header>

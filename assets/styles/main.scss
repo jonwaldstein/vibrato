@@ -1,9 +1,9 @@
 @import "common/variables";
-@import "overrides/bootstrap";
 @import "overrides/hamburgers";
-
 //Node Modules
-@import "~bootstrap/scss/bootstrap.scss";
+@import "~tailwindcss/base";
+@import "~tailwindcss/components";
+@import "~tailwindcss/utilities";
 @import "~hamburgers/_sass/hamburgers/hamburgers";
 @import "~sass-rem/rem";
 

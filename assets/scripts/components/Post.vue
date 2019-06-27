@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
 	<div class=" col-md-4 mb-4" v-if="post">
 		<div class="post__inner">
 			<div class="post__image--wrapper" v-if="hasThumbnail(post)">

@@ -47,4 +47,9 @@ final class ThemeCarbonFields
 		get_template_part('lib/callbacks/fields/PageBuilder');
 	}
 
+	public function gutenberg()
+	{
+		get_template_part('lib/callbacks/fields/Gutenberg');
+	}
+
 }

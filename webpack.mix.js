@@ -1,3 +1,4 @@
+const tailwindcss = require('tailwindcss');
 let mix = require('laravel-mix');
 mix.setPublicPath('./');
 mix.setResourceRoot('../');
@@ -16,7 +17,11 @@ mix.setResourceRoot('../');
 mix.js('assets/scripts/main.js', 'dist/scripts/')
    .sass('assets/styles/main.scss', 'dist/styles/')
    .copy('assets/fonts/', 'dist/fonts/')
-   .copy('assets/images/', 'dist/images/');
+   .copy('assets/images/', 'dist/images/')
+   .options({
+    processCssUrls: false,
+    postCss: [ tailwindcss('assets/scripts/tailwind.config.js') ],
+  })
 
 if (!mix.inProduction()) {
     mix.webpackConfig({

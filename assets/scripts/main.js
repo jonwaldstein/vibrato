@@ -1,6 +1,5 @@
 //Import Libraries
 import $ from 'jquery';
-import 'bootstrap';
 import Vue from 'vue';
 import { store } from './store';
 
@@ -19,7 +18,9 @@ const app = new App();
 function run() {
 
   app.init();
-  app.hamburgers(".hamburger");
+  app.hamburger(".js-hamburger");
+  app.navigation(".js-trigger-navigation",".js-navigation");
+  app.navigation_sub_menu(".menu-item-has-children");
 
   const appPosts = new Vue({ 
       el: '#appPosts',
