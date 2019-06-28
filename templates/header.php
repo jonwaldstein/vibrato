@@ -32,6 +32,3 @@ $site_logo = function_exists('carbon_get_theme_option') ? carbon_get_theme_optio
   </nav>
 </nav>
 </header>
-<button class="text-blue-600 hover:text-red-600 hover:transition-all hover:transition-600">
-  Button
-</button>
