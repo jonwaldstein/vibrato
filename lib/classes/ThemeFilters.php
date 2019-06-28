@@ -12,6 +12,7 @@ class ThemeFilters
 			add_filter( 'tiny_mce_before_init', array($this,'custom_tinymce_text_sizes'));
 			add_filter( 'nav_menu_css_class', array($this,'nav_menu_css_class'), 10, 4 ); 
 			add_filter( 'nav_menu_submenu_css_class', array($this,'nav_menu_submenu_css_class'), 10, 4 ); 
+			add_filter( 'nav_menu_link_attributes', array($this,'nav_menu_link_attributes'), 10, 4 ); 
   }
 
   /**
@@ -65,18 +66,30 @@ class ThemeFilters
 	public function nav_menu_css_class($classes, $item, $args, $depth){
 		//Parent Item Classes
 		if ($depth === 0){
-			$classes[] = 'relative block lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 transition-all transition-100';
+			$classes[] = 'relative block lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4';
 		//Children Item Classes
 		} else {
-			$classes[] = 'relative block py-4 px-1 lg:inline-block text-black hover:text-grey transition-all transition-100';
+			$classes[] = 'relative block text-black hover:text-grey';
 		}
 		return $classes;
 	}
 
 	public function nav_menu_submenu_css_class($classes, $args, $depth){
 
-		$classes[] = 'relative hidden lg:absolute block bg-white';
+		$classes[] = 'relative hidden lg:absolute block bg-white w-64 left-0';
 
 		return $classes;
+	}
+
+	public function nav_menu_link_attributes($atts, $item, $args, $depth){
+
+		if ($depth === 0){
+			$atts['class'] = 'inline-block';
+		
+		} else {
+			$atts['class'] = 'block py-4 px-4 text-gray-800 hover:bg-black hover:text-white';
+		}
+
+		return $atts;
 	}
 }
