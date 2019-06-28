@@ -66,7 +66,7 @@ class ThemeFilters
 	public function nav_menu_css_class($classes, $item, $args, $depth){
 		//Parent Item Classes
 		if ($depth === 0){
-			$classes[] = 'relative block lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4';
+			$classes[] = 'relative block lg:inline-block lg:mt-0 mr-4';
 		//Children Item Classes
 		} else {
 			$classes[] = 'relative block text-black hover:text-grey';
@@ -82,12 +82,17 @@ class ThemeFilters
 	}
 
 	public function nav_menu_link_attributes($atts, $item, $args, $depth){
-
 		if ($depth === 0){
-			$atts['class'] = 'inline-block text-sm';
+			$atts['class'] = 'inline-block text-sm text-teal-200 hover:text-white';
+			if ($item->current){
+				$atts['class'] = 'inline-block text-sm text-gray-800 hover:text-black';
+			}
 		
 		} else {
 			$atts['class'] = 'block px-4 py-2 text-gray-800 hover:bg-black hover:text-white text-sm';
+			if ($item->current){
+				$atts['class'] = 'block px-4 py-2 text-gray-800 hover:bg-black hover:text-white text-sm underline';
+			}
 		}
 
 		return $atts;
