@@ -20,15 +20,12 @@ $site_logo = function_exists('carbon_get_theme_option') ? carbon_get_theme_optio
       </span>
     </button>
   </div>
-  <nav id="site-navigation" class="js-navigation w-full block hidden lg:flex lg:items-center lg:w-auto" role="navigation">
+  <nav class="js-navigation w-full block hidden lg:flex lg:items-center lg:w-auto">
   <?php
     if ( has_nav_menu( 'primary_navigation' ) ) :
       wp_nav_menu([
       'theme_location'  => 'primary_navigation',
-      'container'       => 'ul',
-      'container_class' => 'text-sm lg:flex-grow',
-      'menu_id'         => 'primary-navigation-menu',
-      'menu_class'      => 'text-sm lg:flex-grow'
+      'container'       => 'ul'
     ]);
     endif;
     ?>

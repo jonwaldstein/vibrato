@@ -76,7 +76,7 @@ class ThemeFilters
 
 	public function nav_menu_submenu_css_class($classes, $args, $depth){
 
-		$classes[] = 'relative hidden lg:absolute block bg-white w-64 left-0';
+		$classes[] = 'relative hidden lg:absolute block bg-white w-64 right-0 bg-white shadow-sm';
 
 		return $classes;
 	}
@@ -84,10 +84,10 @@ class ThemeFilters
 	public function nav_menu_link_attributes($atts, $item, $args, $depth){
 
 		if ($depth === 0){
-			$atts['class'] = 'inline-block';
+			$atts['class'] = 'inline-block text-sm';
 		
 		} else {
-			$atts['class'] = 'block py-4 px-4 text-gray-800 hover:bg-black hover:text-white';
+			$atts['class'] = 'block px-4 py-2 text-gray-800 hover:bg-black hover:text-white text-sm';
 		}
 
 		return $atts;
