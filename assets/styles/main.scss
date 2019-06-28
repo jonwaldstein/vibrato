@@ -14,9 +14,11 @@
 @import "~sass-rem/rem";
 
 //Local scss files
+@import "common/mixins";
 @import "common/global";
 @import "common/type";
 @import "common/utilities";
+@import "common/ie";
 @import "components/buttons";
 @import "components/forms";
 @import "layouts/header";
