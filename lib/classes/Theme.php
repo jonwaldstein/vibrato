@@ -32,14 +32,14 @@ final class Theme
 	public function register_custom_taxonomies()
 	{
 		add_action( 'init', function(){
-			get_template_part('lib/callbacks/tax/tax-sectionpage');
+			//get_template_part('lib/callbacks/tax/tax-sectionpage');
 		});
 	}
 
 	public function register_custom_post_types()
 	{
 		add_action( 'init', function(){
-			get_template_part('lib/callbacks/cpt/cpt-sections');
+			//get_template_part('lib/callbacks/cpt/cpt-sections');
 		}, 0 );
 	}
 
@@ -50,6 +50,13 @@ final class Theme
 		// add_action( 'widgets_init', function(){
 		// 	register_widget( 'widget_recent_posts' );
 		// });
+
+	}
+
+	public function acf()
+	{
+
+			$this->acf_add_options_page();
 
 	}
 
@@ -82,11 +89,30 @@ final class Theme
 	  }
 	}
 
-	/**
-	* Page Builder
-	*/
-	public static function page_builder($current_post_id = '')
+	private function acf_add_options_page()
 	{
-		include(locate_template('templates/page-builder.php'));
+		if( function_exists('acf_add_options_page') ) {
+			
+			acf_add_options_page(array(
+				'page_title' 	=> 'Theme General Settings',
+				'menu_title'	=> 'Theme Settings',
+				'menu_slug' 	=> 'theme-general-settings',
+				'capability'	=> 'edit_posts',
+				'redirect'		=> false
+			));
+			
+			// acf_add_options_sub_page(array(
+			// 	'page_title' 	=> 'Theme Header Settings',
+			// 	'menu_title'	=> 'Header',
+			// 	'parent_slug'	=> 'theme-general-settings',
+			// ));
+			
+			// acf_add_options_sub_page(array(
+			// 	'page_title' 	=> 'Theme Footer Settings',
+			// 	'menu_title'	=> 'Footer',
+			// 	'parent_slug'	=> 'theme-general-settings',
+			// ));
+			
+		}
 	}
 }
