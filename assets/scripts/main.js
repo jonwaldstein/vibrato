@@ -31,7 +31,7 @@ domReady( function() {
   nav.sub_menu(".menu-item-has-children");
   objectFitImages();
 
-  if (document.getElementById('#appPosts')){
+  if (document.getElementById('appPosts')){
     const appPosts = new Vue({ 
         el: '#appPosts',
         store: store,

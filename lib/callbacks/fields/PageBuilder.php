@@ -1235,9 +1235,4 @@ Container::make( 'post_meta', 'Page Builder' )//PAGE BUILDER FIELDS
                 ))->set_header_template( '<%- content_type %>' )//Content Block Complex--End  
             ))//Column Complex--End
         ))//Dynamic Section Complex--End
-        ->add_fields( 'media_gallery', array(
-            Field::make( 'media_gallery', 'media_gallery' )
-            ->set_type( array( 'image', 'video' ) )
-            ->set_duplicates_allowed( false ),
-        ))
 ));//Page Builder Fields Array--End
