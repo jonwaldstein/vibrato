@@ -6,7 +6,7 @@ use ZGM\Vibrato\Classes\Setup;
 
 <!doctype html>
 <html <?php language_attributes(); ?>>
-  <?php get_template_part('templates/head'); ?>
+  <?php get_template_part('templates/global/head'); ?>
   <body <?php body_class(); ?>>
     <!--[if IE]>
       <div class="alert alert-warning">
@@ -15,8 +15,8 @@ use ZGM\Vibrato\Classes\Setup;
     <![endif]-->
     <?php
       do_action('get_header');
-      get_template_part('templates/header');
-      get_template_part('templates/banner');
+      get_template_part('templates/global/header');
+      get_template_part('templates/global/banner');
     ?>
     <div class="wrap container mx-auto px-6 py-6 lg:py-6 lg:px-0">
       <main class="main">
@@ -30,7 +30,7 @@ use ZGM\Vibrato\Classes\Setup;
     </div><!-- /.wrap -->
     <?php
       do_action('get_footer');
-      get_template_part('templates/footer');
+      get_template_part('templates/global/footer');
       wp_footer();
     ?>
   </body>
