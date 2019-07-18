@@ -266,7 +266,7 @@ class Setup
   function assets() 
   {
     wp_enqueue_style('sage/css', Theme::asset_path('styles/main.css'), false, null);
-    wp_enqueue_style('sage/googlefonts', '//fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,500,700|Alegreya+Sans:400,500,700|Alegreya:400,500,700', false, null);
+    wp_enqueue_style('sage/googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400,500,700', false, null);
 
     if (is_single() && comments_open() && get_option('thread_comments')) {
       wp_enqueue_script('comment-reply');

@@ -26,10 +26,28 @@ const nav = new Nav();
 domReady( function() {
 //do something after DOM loads.
   nav.init();
-  nav.hamburger_animate(".js-hamburger");
-  nav.primary(".js-trigger-navigation",".js-navigation");
-  nav.sub_menu(".menu-item-has-children");
+
+  if (document.querySelector('.js-hamburger')){
+    nav.hamburger_animate(".js-hamburger");
+  }
+
+  if (document.querySelector('.js-navigation')){
+    nav.primary(".js-trigger-navigation",".js-navigation");
+  }
+
+  if (document.querySelector('.menu-item-has-children')){
+    nav.sub_menu(".menu-item-has-children");
+  }
+
+  if (document.querySelector('.js-accordion')){
+    app.accordion(".js-accordion",".js-accordion-heading",".js-accordion-content");
+  }
+
   objectFitImages();
+
+  if (IeVersion < 12 ){
+    app.smoothScroll();
+  }
 
   if (document.getElementById('appPosts')){
     const appPosts = new Vue({ 

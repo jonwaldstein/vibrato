@@ -39,6 +39,7 @@
     "es6-promise": "^4.2.8",
     "jquery": "^3.4.1",
     "object-fit-images": "^3.2.4",
+    "smooth-scroll": "^16.1.0",
     "tailwindcss": "^1.0.5",
     "vue": "^2.5.16",
     "vue-template-compiler": "^2.5.16",
