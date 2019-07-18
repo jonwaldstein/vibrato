@@ -42,7 +42,6 @@
     "jquery": "^3.4.1",
     "object-fit-images": "^3.2.4",
     "tailwindcss": "^1.0.5",
-    "tailwindcss-transitions": "^2.0.1",
     "vue": "^2.5.16",
     "vue-template-compiler": "^2.5.16",
     "vuex": "^3.0.1"
