@@ -1,25 +1,25 @@
+//Tailwindcss https://tailwindcss.com/
+//Tailwindcss - Base
+@import "~tailwindcss/base";
+//Tailwindcss - Components
+@import "~tailwindcss/components";
+
+
 //Local scss files run before everything
 @import "common/variables";
 @import "overrides/hamburgers";
 
-//Tailwindcss
-//https://tailwindcss.com/
-//https://nerdcave.com/tailwind-cheat-sheet
-@import "~tailwindcss/base";
-@import "~tailwindcss/components";
-@import "~tailwindcss/utilities";
-
 //Node Modules
 @import "~hamburgers/_sass/hamburgers/hamburgers";
-@import "~sass-rem/rem";
 
 //Local scss files
 @import "common/mixins";
 @import "common/global";
-@import "common/type";
 @import "common/utilities";
 @import "common/ie";
+@import "common/type";
 @import "components/buttons";
-@import "components/forms";
-@import "layouts/header";
-@import "layouts/footer";
+@import "components/links";
+
+//Tailwindcss Utilities
+@import "~tailwindcss/utilities";
