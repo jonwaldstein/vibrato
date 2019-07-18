@@ -9,7 +9,7 @@ Block::make( __( 'Alert' ) )
     Field::make( 'text', 'alert_heading' ),
     Field::make( 'rich_text', 'alert_text' ),
 ))
-->set_category( 'ZGM' )
+->set_category( 'Custom' )
 ->set_render_callback( function ( $block ) {
     ?>
 		<?php if (!empty($block['alert_text'] || $block['alert_heading'])): ?>
@@ -29,7 +29,7 @@ Block::make( __( 'Alerts' ) )
     Field::make( 'html', 'crb_html', __( 'Alerts' ) )
     ->set_html('This will display all your alerts' )
 ))
-->set_category( 'ZGM' )
+->set_category( 'Custom' )
 ->set_render_callback( function ( $block ) {
     ?>
     <?php 
