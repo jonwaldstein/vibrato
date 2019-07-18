@@ -20,7 +20,7 @@ import Posts from './components/Posts.vue';
 //Initiate Classes Here
 const app = new App();
 const nav = new Nav();
-
+const IeVersion = app.detectIE();
 
 // Run Class Based Scripts Here
 domReady( function() {
