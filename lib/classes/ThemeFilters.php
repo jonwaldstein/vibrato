@@ -3,6 +3,9 @@ namespace ZGM\Vibrato\Classes;
 
 class ThemeFilters
 {
+
+	public $primary_navs = ['primary_navigation'];
+
 	public function init()
   {
   		add_filter('template_include', ['ZGM\\Vibrato\\Classes\\Wrapper', 'wrap'], 109);
@@ -63,38 +66,80 @@ class ThemeFilters
 		return $initArray;
 	}
 
+
+	/**
+	 * Nav Menu - <li> item </li>
+	 */
 	public function nav_menu_css_class($classes, $item, $args, $depth){
-		//Parent Item Classes
-		if ($depth === 0){
-			$classes[] = 'relative block lg:inline-block lg:mt-0 mr-4';
-		//Children Item Classes
+
+		// Primary Navigation
+		if (in_array($args->theme_location, $this->primary_navs)) {
+			//Parent Item Classes
+			if ($depth === 0){
+				$classes[] = 'relative block lg:inline-block lg:mt-0 mr-4';
+			//Children Item Classes
+			} else {
+				$classes[] = 'relative block text-black hover:text-grey';
+			}
 		} else {
-			$classes[] = 'relative block text-black hover:text-grey';
+			//Parent Item Classes
+			if ($depth === 0){
+				$classes[] = 'relative block lg:inline-block lg:mt-0 mr-4';
+			//Children Item Classes
+			} else {
+				$classes[] = 'relative block text-black hover:text-grey';
+			}
 		}
 		return $classes;
 	}
 
-	public function nav_menu_submenu_css_class($classes, $args, $depth){
-
-		$classes[] = 'relative hidden lg:absolute block bg-white w-64 right-0 bg-white shadow-sm';
-
-		return $classes;
-	}
-
+	/**
+	 * Nav Menu - <a> item </a>
+	 */
 	public function nav_menu_link_attributes($atts, $item, $args, $depth){
-		if ($depth === 0){
-			$atts['class'] = 'inline-block text-sm text-teal-200 hover:text-white';
-			if ($item->current){
-				$atts['class'] = 'inline-block text-sm text-gray-800 hover:text-black';
+		// Primary Navigation
+		if (in_array($args->theme_location, $this->primary_navs)) {
+			if ($depth === 0){
+				$atts['class'] = 'inline-block text-sm text-teal-200 hover:text-white';
+				if ($item->current){
+					$atts['class'] = 'inline-block text-sm text-gray-800 hover:text-black';
+				}
+			
+			} else {
+				$atts['class'] = 'block px-4 py-2 text-gray-800 hover:bg-black hover:text-white text-sm';
+				if ($item->current){
+					$atts['class'] = 'block px-4 py-2 text-gray-800 hover:bg-black hover:text-white text-sm underline';
+				}
 			}
-		
 		} else {
-			$atts['class'] = 'block px-4 py-2 text-gray-800 hover:bg-black hover:text-white text-sm';
-			if ($item->current){
-				$atts['class'] = 'block px-4 py-2 text-gray-800 hover:bg-black hover:text-white text-sm underline';
+			if ($depth === 0){
+				$atts['class'] = 'inline-block text-sm text-teal-200 hover:text-white';
+				if ($item->current){
+					$atts['class'] = 'inline-block text-sm text-gray-800 hover:text-black';
+				}
+			
+			} else {
+				$atts['class'] = 'block px-4 py-2 text-gray-800 hover:bg-black hover:text-white text-sm';
+				if ($item->current){
+					$atts['class'] = 'block px-4 py-2 text-gray-800 hover:bg-black hover:text-white text-sm underline';
+				}
 			}
 		}
 
 		return $atts;
+	}
+
+	/**
+	 * Nav Sub Menu - <ul> </ul>
+	 */
+	public function nav_menu_submenu_css_class($classes, $args, $depth){
+		// Primary Navigation
+		if (in_array($args->theme_location, $this->primary_navs)) {
+			$classes[] = 'relative hidden lg:absolute block bg-white w-64 right-0 bg-white shadow-sm';
+		} else {
+			$classes[] = 'relative hidden lg:absolute block bg-white w-64 right-0 bg-white shadow-sm';
+		}
+
+		return $classes;
 	}
 }
