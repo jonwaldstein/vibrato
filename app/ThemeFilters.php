@@ -80,7 +80,6 @@ class ThemeFilters extends BaseTheme
      */
     public function nav_menu_css_class($classes, $item, $args, $depth)
     {
-
         // Primary Navigation
         if (in_array($args->theme_location, $this->primary_navs)) {
             //Parent Item Classes
@@ -110,9 +109,9 @@ class ThemeFilters extends BaseTheme
         // Primary Navigation
         if (in_array($args->theme_location, $this->primary_navs)) {
             if ($depth === 0) {
-                $atts['class'] = 'inline-block text-sm text-teal-200 hover:text-white';
+                $atts['class'] = 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium';
                 if ($item->current) {
-                    $atts['class'] = 'inline-block text-sm text-gray-800 hover:text-black';
+                    $atts['class'] = 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium';
                 }
             } else {
                 $atts['class'] = 'block px-4 py-2 text-gray-800 hover:bg-black hover:text-white text-sm';

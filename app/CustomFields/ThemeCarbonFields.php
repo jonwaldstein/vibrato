@@ -24,24 +24,6 @@ final class ThemeCarbonFields extends BaseTheme
 
     public function theme_options()
     {
-
         get_template_part('app/CustomFields/ThemeOptions');
-    }
-
-    public function front_page()
-    {
-
-        get_template_part('app/CustomFields/FrontPage');
-    }
-
-    public function bannner()
-    {
-
-        get_template_part('app/CustomFields/Banner');
-    }
-
-    public function gutenberg()
-    {
-        get_template_part('app/CustomFields/Gutenberg');
     }
 }
