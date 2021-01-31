@@ -1,7 +1,12 @@
 <?php
 
-namespace Vibrato;
+namespace Vibrato\CustomFields;
 
+/**
+ * class ThemeCarbonFields
+ *
+ * @since 1.0.0
+ */
 final class ThemeCarbonFields
 {
 
@@ -21,23 +26,23 @@ final class ThemeCarbonFields
     public function theme_options()
     {
 
-        get_template_part('app/callbacks/fields/ThemeOptions');
+        get_template_part('app/CustomFields/ThemeOptions');
     }
 
     public function front_page()
     {
 
-        get_template_part('app/callbacks/fields/FrontPage');
+        get_template_part('app/CustomFields/FrontPage');
     }
 
     public function bannner()
     {
 
-        get_template_part('app/callbacks/fields/Banner');
+        get_template_part('app/CustomFields/Banner');
     }
 
     public function gutenberg()
     {
-        get_template_part('app/callbacks/fields/Gutenberg');
+        get_template_part('app/CustomFields/Gutenberg');
     }
 }

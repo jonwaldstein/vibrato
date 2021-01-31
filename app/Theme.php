@@ -2,6 +2,8 @@
 
 namespace Vibrato;
 
+use Vibrato\CustomFields\ThemeCarbonFields;
+
 /**
  * class Theme
  *
@@ -22,7 +24,7 @@ final class Theme
 
     protected function setup()
     {
-        if (class_exists('Vibrato\\ThemeSetup')) {
+        if (class_exists(ThemeSetup::class)) {
             $Setup = new ThemeSetup();
             $Setup->init();
         }
@@ -30,7 +32,7 @@ final class Theme
 
     protected function add_filters()
     {
-        if (class_exists('Vibrato\\ThemeFilters')) {
+        if (class_exists(ThemeFilters::class)) {
             $Filters = new ThemeFilters();
             $Filters->init();
         }
@@ -38,7 +40,7 @@ final class Theme
 
     protected function add_actions()
     {
-        if (class_exists('Vibrato\\ThemeActions')) {
+        if (class_exists(ThemeActions::class)) {
             $Actions = new ThemeActions();
             $Actions->init();
         }
@@ -46,7 +48,7 @@ final class Theme
 
     protected function register_widgets()
     {
-        if (class_exists('Vibrato\\ThemeWidgets')) {
+        if (class_exists(ThemeWidgets::class)) {
             $ThemeWidgets = new ThemeWidgets();
             $ThemeWidgets->init();
         }
@@ -55,14 +57,14 @@ final class Theme
     protected function register_custom_taxonomies()
     {
         add_action('init', function () {
-            get_template_part('app/callbacks/tax/tax-sectionpage');
+            //register_taxonomy('', []);
         });
     }
 
     protected function register_custom_post_types()
     {
         add_action('init', function () {
-            get_template_part('app/callbacks/cpt/cpt-sections');
+            //register_post_type('', []);
         }, 0);
     }
 
@@ -71,7 +73,7 @@ final class Theme
         /**
          * Initialize all the Carbon Fields
          */
-        if (class_exists('Vibrato\\ThemeCarbonFields')) {
+        if (class_exists(ThemeCarbonFields::class)) {
 
             add_action('after_setup_theme', function () {
                 \Carbon_Fields\Carbon_Fields::boot();
