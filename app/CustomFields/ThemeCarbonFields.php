@@ -2,6 +2,8 @@
 
 namespace Vibrato\CustomFields;
 
+use Vibrato\Traits\Booted;
+
 /**
  * class ThemeCarbonFields
  *
@@ -9,13 +11,12 @@ namespace Vibrato\CustomFields;
  */
 final class ThemeCarbonFields
 {
+    use Booted;
 
     private $class_methods;
 
-
-    public function register_fields()
+    public function register()
     {
-
         $this->class_methods = get_class_methods($this);
 
         foreach ($this->class_methods as $method) {

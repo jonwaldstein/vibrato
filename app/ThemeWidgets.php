@@ -2,9 +2,13 @@
 
 namespace Vibrato;
 
+use Vibrato\Traits\Booted;
+
 class ThemeWidgets
 {
-    public function init()
+    use Booted;
+
+    protected function register()
     {
         add_action('widgets_init', array($this, 'register_sidebars'));
     }

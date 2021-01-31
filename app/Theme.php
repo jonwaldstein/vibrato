@@ -3,6 +3,7 @@
 namespace Vibrato;
 
 use Vibrato\CustomFields\ThemeCarbonFields;
+use Vibrato\Traits\Booted;
 
 /**
  * class Theme
@@ -11,7 +12,9 @@ use Vibrato\CustomFields\ThemeCarbonFields;
  */
 final class Theme
 {
-    public function init()
+    use Booted;
+
+    protected function register()
     {
         $this->setup();
         $this->add_filters();
@@ -24,34 +27,22 @@ final class Theme
 
     protected function setup()
     {
-        if (class_exists(ThemeSetup::class)) {
-            $Setup = new ThemeSetup();
-            $Setup->init();
-        }
+        ThemeSetup::boot();
     }
 
     protected function add_filters()
     {
-        if (class_exists(ThemeFilters::class)) {
-            $Filters = new ThemeFilters();
-            $Filters->init();
-        }
+        ThemeFilters::boot();
     }
 
     protected function add_actions()
     {
-        if (class_exists(ThemeActions::class)) {
-            $Actions = new ThemeActions();
-            $Actions->init();
-        }
+        ThemeActions::boot();
     }
 
     protected function register_widgets()
     {
-        if (class_exists(ThemeWidgets::class)) {
-            $ThemeWidgets = new ThemeWidgets();
-            $ThemeWidgets->init();
-        }
+        ThemeWidgets::boot();
     }
 
     protected function register_custom_taxonomies()
@@ -73,15 +64,11 @@ final class Theme
         /**
          * Initialize all the Carbon Fields
          */
-        if (class_exists(ThemeCarbonFields::class)) {
+        add_action('after_setup_theme', function () {
+            \Carbon_Fields\Carbon_Fields::boot();
+        });
 
-            add_action('after_setup_theme', function () {
-                \Carbon_Fields\Carbon_Fields::boot();
-            });
-
-            $ThemeCarbonFields = new ThemeCarbonFields;
-            $ThemeCarbonFields->register_fields();
-        }
+        ThemeCarbonFields::boot();
     }
 
     public static function asset_path($filename)

@@ -2,6 +2,8 @@
 
 namespace Vibrato;
 
+use Vibrato\Traits\Booted;
+
 /**
  * class ThemeFilters
  *
@@ -9,10 +11,11 @@ namespace Vibrato;
  */
 class ThemeFilters
 {
+    use Booted;
 
     public $primary_navs = ['primary_navigation'];
 
-    public function init()
+    protected function register()
     {
         add_filter('template_include', ['Vibrato\\ThemeTemplateWrapper', 'wrap'], 109);
         add_filter('body_class', array($this, 'body_class'));

@@ -9,9 +9,8 @@ if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
 
 
 /**
- * Initialize all Theme Functions
+ * Boot Theme class
  */
 if (class_exists('Vibrato\\Theme')) {
-    $Theme = new Vibrato\Theme;
-    $Theme->init();
+    Vibrato\Theme::boot();
 }

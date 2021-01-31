@@ -2,10 +2,13 @@
 
 namespace Vibrato;
 
+use Vibrato\Traits\Booted;
+
 class ThemeSetup
 {
+    use Booted;
 
-    public function init()
+    protected function register()
     {
         add_action('after_setup_theme', array($this, 'setup'));
         add_action('wp_enqueue_scripts', array($this, 'resources'), 100);

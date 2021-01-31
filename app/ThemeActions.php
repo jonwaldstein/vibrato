@@ -2,6 +2,8 @@
 
 namespace Vibrato;
 
+use Vibrato\Traits\Booted;
+
 /**
  * class ThemeActions
  *
@@ -9,7 +11,9 @@ namespace Vibrato;
  */
 class ThemeActions
 {
-    public function init()
+    use Booted;
+
+    protected function register()
     {
     }
 }
