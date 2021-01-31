@@ -2,7 +2,11 @@
 
 namespace Vibrato\Classes;
 
-
+/**
+ * class Theme
+ *
+ * @since 1.0.0
+ */
 final class Theme
 {
     public function add_filters()
@@ -18,10 +22,6 @@ final class Theme
         if (class_exists('Vibrato\\Classes\\ThemeActions')) {
             $Actions = new ThemeActions();
             $Actions->init();
-        }
-        if (class_exists('Vibrato\\Classes\\Setup')) {
-            $Setup = new Setup();
-            $Setup->init();
         }
     }
 

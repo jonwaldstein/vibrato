@@ -8,7 +8,6 @@ class Setup
     public function init()
     {
         add_action('after_setup_theme', array($this, 'setup'));
-        add_action('widgets_init', array($this, 'widgets_init'));
         add_action('wp_enqueue_scripts', array($this, 'resources'), 100);
     }
     /**
@@ -176,66 +175,6 @@ class Setup
         add_editor_style(Theme::asset_path('css/app.css'));
     }
 
-    /**
-     * Register sidebars
-     */
-    public function widgets_init()
-    {
-        register_sidebar([
-            'name'          => __('Primary', 'vibrato'),
-            'id'            => 'sidebar-primary',
-            'before_widget' => '<section class="widget %1$s %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h3>',
-            'after_title'   => '</h3>'
-        ]);
-
-        register_sidebar([
-            'name'          => __('Footer', 'vibrato'),
-            'id'            => 'sidebar-footer',
-            'before_widget' => '<section class="widget %1$s %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h4>',
-            'after_title'   => '</h4>'
-        ]);
-
-        register_sidebar([
-            'name'          => __('Footer Column 1', 'vibrato'),
-            'id'            => 'footer-column-1',
-            'before_widget' => '<section class="widget %1$s %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h4>',
-            'after_title'   => '</h4>'
-        ]);
-
-        register_sidebar([
-            'name'          => __('Footer Column 2', 'vibrato'),
-            'id'            => 'footer-column-2',
-            'before_widget' => '<section class="widget %1$s %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h4>',
-            'after_title'   => '</h4>'
-        ]);
-
-        register_sidebar([
-            'name'          => __('Footer Column 3', 'vibrato'),
-            'id'            => 'footer-column-3',
-            'before_widget' => '<section class="widget %1$s %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h4>',
-            'after_title'   => '</h4>'
-        ]);
-
-        register_sidebar([
-            'name'          => __('Footer Copyright', 'vibrato'),
-            'id'            => 'footer-copyright',
-            'before_widget' => '<section class="widget %1$s %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h4>',
-            'after_title'   => '</h4>'
-        ]);
-    }
-
 
     /**
      * Determine which pages should NOT display the sidebar
@@ -257,16 +196,16 @@ class Setup
      */
     function resources()
     {
-        wp_enqueue_style('sage/css', Theme::asset_path('css/app.css'), false, null);
-        wp_enqueue_style('sage/googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400,500,700', false, null);
+        wp_enqueue_style('vibrato/css', Theme::asset_path('css/app.css'), false, null);
+        wp_enqueue_style('vibrato/googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400,500,700', false, null);
 
         if (is_single() && comments_open() && get_option('thread_comments')) {
             wp_enqueue_script('comment-reply');
         }
 
-        wp_enqueue_script('sage/js', Theme::asset_path('js/app.js'), [], null, true);
+        wp_enqueue_script('vibrato/js', Theme::asset_path('js/app.js'), [], null, true);
 
-        wp_localize_script('sage/js', 'WPREST', array(
+        wp_localize_script('vibrato/js', 'WPREST', array(
             'root' => esc_url_raw(rest_url()),
             'nonce' => wp_create_nonce('wp_rest'),
             'current_ID' => get_the_ID()

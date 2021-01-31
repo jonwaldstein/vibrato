@@ -2,6 +2,11 @@
 
 namespace Vibrato\Classes;
 
+/**
+ * class ThemeFilters
+ *
+ * @since 1.0.0
+ */
 class ThemeFilters
 {
 

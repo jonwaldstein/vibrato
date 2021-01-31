@@ -27,10 +27,10 @@
   },
   "autoload": {
     "psr-4": {
-        "Vibrato\\": "src/"
+        "Vibrato\\": "app/"
     },
     "classmap": [
-        "src/"
+        "app/"
     ]
   }
 }

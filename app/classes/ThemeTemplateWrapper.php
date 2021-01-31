@@ -5,6 +5,8 @@ namespace Vibrato\Classes;
 /**
  * class ThemeTemplateWrapper
  *
+ * @since 1.0.0
+ *
  * @link https://roots.io/vibrato/docs/theme-wrapper/
  * @link http://scribu.net/wordpress/theme-wrappers.html
  */

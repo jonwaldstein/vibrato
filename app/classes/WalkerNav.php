@@ -4,6 +4,11 @@ namespace Vibrato\Classes;
 
 use Walker_Nav_Menu;
 
+/**
+ * class WalkerNav
+ *
+ * @since 1.0.0
+ */
 class WalkerNav extends Walker_Nav_Menu
 {
     /**
