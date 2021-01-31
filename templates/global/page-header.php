@@ -1,5 +1,7 @@
-<?php use ZGM\Vibrato\Classes\Theme; ?>
+<?php
+
+use Vibrato\Classes\Theme; ?>
 
 <div class="page-header">
-  <h1><?= Theme::title(); ?></h1>
+    <h1><?= Theme::title(); ?></h1>
 </div>
