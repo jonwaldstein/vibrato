@@ -99,4 +99,29 @@ final class Theme extends BaseTheme
             return get_the_title();
         }
     }
+
+    /**
+     *
+     * This allows us to use our views folder for default wp templates
+     *
+     * @since 1.0.0
+     */
+    public static function get_default_template(): void
+    {
+        $template_dir = 'resources/views/';
+
+        if (is_home()) {
+            $template = $template_dir . 'home';
+        } else if (is_404()) {
+            $template = $template_dir . '404';
+        } else if (is_single()) {
+            $template = $template_dir . 'single';
+        } else if (is_archive()) {
+            $template = $template_dir . 'archive';
+        } else {
+            $template = $template_dir . get_post_type();
+        }
+
+        get_template_part($template);
+    }
 }
