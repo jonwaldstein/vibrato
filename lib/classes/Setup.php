@@ -25,7 +25,7 @@ class Setup
 
     // Make theme available for translation
     // Community translations can be found at https://github.com/roots/sage-translations
-    load_theme_textdomain('sage', get_template_directory() . '/lang');
+    load_theme_textdomain('vibrato', get_template_directory() . '/lang');
 
     /**
      * Add support for core custom logo.
@@ -45,7 +45,7 @@ class Setup
     // Register wp_nav_menu() menus
     // http://codex.wordpress.org/Function_Reference/register_nav_menus
     register_nav_menus([
-      'primary_navigation' => __('Primary Navigation', 'sage')
+      'primary_navigation' => __('Primary Navigation', 'vibrato')
     ]);
 
     // Add default posts and comments RSS feed links to head.
@@ -118,26 +118,26 @@ class Setup
       'editor-font-sizes',
       array(
         array(
-          'name'      => __( 'Small', 'sage' ),
-          'shortName' => __( 'S', 'sage' ),
+          'name'      => __( 'Small', 'vibrato' ),
+          'shortName' => __( 'S', 'vibrato' ),
           'size'      => 19.5,
           'slug'      => 'small',
         ),
         array(
-          'name'      => __( 'Normal', 'sage' ),
-          'shortName' => __( 'M', 'sage' ),
+          'name'      => __( 'Normal', 'vibrato' ),
+          'shortName' => __( 'M', 'vibrato' ),
           'size'      => 22,
           'slug'      => 'normal',
         ),
         array(
-          'name'      => __( 'Large', 'sage' ),
-          'shortName' => __( 'L', 'sage' ),
+          'name'      => __( 'Large', 'vibrato' ),
+          'shortName' => __( 'L', 'vibrato' ),
           'size'      => 36.5,
           'slug'      => 'large',
         ),
         array(
-          'name'      => __( 'Huge', 'sage' ),
-          'shortName' => __( 'XL', 'sage' ),
+          'name'      => __( 'Huge', 'vibrato' ),
+          'shortName' => __( 'XL', 'vibrato' ),
           'size'      => 49.5,
           'slug'      => 'huge',
         ),
@@ -149,27 +149,27 @@ class Setup
       'editor-color-palette',
       array(
         array(
-          'name'  => __( 'Primary', 'sage' ),
+          'name'  => __( 'Primary', 'vibrato' ),
           'slug'  => 'primary',
           'color' => '#333',
         ),
         array(
-          'name'  => __( 'Secondary', 'sage' ),
+          'name'  => __( 'Secondary', 'vibrato' ),
           'slug'  => 'secondary',
           'color' => '#333',
         ),
         array(
-          'name'  => __( 'Dark Gray', 'sage' ),
+          'name'  => __( 'Dark Gray', 'vibrato' ),
           'slug'  => 'dark-gray',
           'color' => '#111',
         ),
         array(
-          'name'  => __( 'Light Gray', 'sage' ),
+          'name'  => __( 'Light Gray', 'vibrato' ),
           'slug'  => 'light-gray',
           'color' => '#767676',
         ),
         array(
-          'name'  => __( 'White', 'sage' ),
+          'name'  => __( 'White', 'vibrato' ),
           'slug'  => 'white',
           'color' => '#FFF',
         ),
@@ -187,10 +187,10 @@ class Setup
   /**
    * Register sidebars
    */
-  public function widgets_init() 
+  public function widgets_init()
   {
     register_sidebar([
-      'name'          => __('Primary', 'sage'),
+      'name'          => __('Primary', 'vibrato'),
       'id'            => 'sidebar-primary',
       'before_widget' => '<section class="widget %1$s %2$s">',
       'after_widget'  => '</section>',
@@ -199,7 +199,7 @@ class Setup
     ]);
 
     register_sidebar([
-      'name'          => __('Footer', 'sage'),
+      'name'          => __('Footer', 'vibrato'),
       'id'            => 'sidebar-footer',
       'before_widget' => '<section class="widget %1$s %2$s">',
       'after_widget'  => '</section>',
@@ -208,7 +208,7 @@ class Setup
     ]);
 
     register_sidebar([
-      'name'          => __('Footer Column 1', 'sage'),
+      'name'          => __('Footer Column 1', 'vibrato'),
       'id'            => 'footer-column-1',
       'before_widget' => '<section class="widget %1$s %2$s">',
       'after_widget'  => '</section>',
@@ -217,7 +217,7 @@ class Setup
     ]);
 
     register_sidebar([
-      'name'          => __('Footer Column 2', 'sage'),
+      'name'          => __('Footer Column 2', 'vibrato'),
       'id'            => 'footer-column-2',
       'before_widget' => '<section class="widget %1$s %2$s">',
       'after_widget'  => '</section>',
@@ -226,7 +226,7 @@ class Setup
     ]);
 
     register_sidebar([
-      'name'          => __('Footer Column 3', 'sage'),
+      'name'          => __('Footer Column 3', 'vibrato'),
       'id'            => 'footer-column-3',
       'before_widget' => '<section class="widget %1$s %2$s">',
       'after_widget'  => '</section>',
@@ -235,7 +235,7 @@ class Setup
     ]);
 
     register_sidebar([
-      'name'          => __('Footer Copyright', 'sage'),
+      'name'          => __('Footer Copyright', 'vibrato'),
       'id'            => 'footer-copyright',
       'before_widget' => '<section class="widget %1$s %2$s">',
       'after_widget'  => '</section>',
@@ -248,7 +248,7 @@ class Setup
   /**
    * Determine which pages should NOT display the sidebar
    */
-  public static function display_sidebar() 
+  public static function display_sidebar()
   {
     static $display;
 
@@ -263,7 +263,7 @@ class Setup
   /**
    * Theme assets
    */
-  function assets() 
+  function assets()
   {
     wp_enqueue_style('sage/css', Theme::asset_path('styles/main.css'), false, null);
     wp_enqueue_style('sage/googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400,500,700', false, null);
@@ -279,7 +279,7 @@ class Setup
       'nonce' => wp_create_nonce('wp_rest'),
       'current_ID' => get_the_ID()
     ));
-    
+
   }
 }
 

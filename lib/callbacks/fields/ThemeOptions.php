@@ -3,7 +3,7 @@
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
-Container::make( 'theme_options', __( 'Website Settings', 'sage' ) )
+Container::make( 'theme_options', __( 'Website Settings', 'vibrato' ) )
     ->add_tab( __('Header'), array(
         Field::make( 'image', 'site_logo', 'Logo' ),
         Field::make( 'image', 'mobile_logo', 'Mobile Logo' )

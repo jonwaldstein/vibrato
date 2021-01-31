@@ -13,9 +13,9 @@ class ThemeFilters
 			add_filter('excerpt_more', array($this, 'excerpt_more'));
 			add_filter( 'mce_buttons_2', array($this,'custom_tinymce_buttons'));
 			add_filter( 'tiny_mce_before_init', array($this,'custom_tinymce_text_sizes'));
-			add_filter( 'nav_menu_css_class', array($this,'nav_menu_css_class'), 10, 4 ); 
-			add_filter( 'nav_menu_submenu_css_class', array($this,'nav_menu_submenu_css_class'), 10, 4 ); 
-			add_filter( 'nav_menu_link_attributes', array($this,'nav_menu_link_attributes'), 10, 4 ); 
+			add_filter( 'nav_menu_css_class', array($this,'nav_menu_css_class'), 10, 4 );
+			add_filter( 'nav_menu_submenu_css_class', array($this,'nav_menu_submenu_css_class'), 10, 4 );
+			add_filter( 'nav_menu_link_attributes', array($this,'nav_menu_link_attributes'), 10, 4 );
   }
 
   /**
@@ -43,7 +43,7 @@ class ThemeFilters
 	 */
 	public function excerpt_more()
 	{
-	  return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'sage') . '</a>';
+	  return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'vibrato') . '</a>';
 	}
 
 	/**
@@ -104,7 +104,7 @@ class ThemeFilters
 				if ($item->current){
 					$atts['class'] = 'inline-block text-sm text-gray-800 hover:text-black';
 				}
-			
+
 			} else {
 				$atts['class'] = 'block px-4 py-2 text-gray-800 hover:bg-black hover:text-white text-sm';
 				if ($item->current){
@@ -117,7 +117,7 @@ class ThemeFilters
 				if ($item->current){
 					$atts['class'] = 'inline-block text-sm text-gray-800 hover:text-black';
 				}
-			
+
 			} else {
 				$atts['class'] = 'block px-4 py-2 text-gray-800 hover:bg-black hover:text-white text-sm';
 				if ($item->current){
