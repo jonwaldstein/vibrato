@@ -100,6 +100,15 @@ final class Theme extends BaseTheme
         }
     }
 
+    public static function wp_loop(string $page_template): void
+    {
+        while (have_posts()) : the_post();
+
+            get_template_part($page_template);
+
+        endwhile;
+    }
+
     /**
      *
      * This allows us to use our views folder for default wp templates

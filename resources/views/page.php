@@ -1,5 +1,5 @@
-<?php while (have_posts()) : the_post(); ?>
+<?php
 
-  <?php get_template_part('resources/views/partials/page/content'); ?>
+use Vibrato\Theme;
 
-<?php endwhile; ?>
+Theme::wp_loop('resources/views/partials/page/content');
