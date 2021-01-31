@@ -1,21 +1,21 @@
 {
-  "name": "zgm/vibrato",
+  "name": "jonwaldstein/vibrato",
   "type": "wordpress-theme",
   "license": "MIT",
-  "description": "A Wordpress Theme Boilerplate inspired by Roots -Sage 8 to include OOP, Laravel Mix, Vue.js, & Carbon Fields",
-  "homepage": "https://github.com/Jpwaldstein/vibrato",
+  "description": "A Wordpress Theme Boilerplate",
+  "homepage": "https://github.com/jonwaldstein/vibrato",
   "authors": [
     {
       "name": "Jon Waldstein",
       "email": "jpwaldstein@gmail.com",
-      "homepage": "https://github.com/Jpwaldstein/vibrato"
+      "homepage": "https://github.com/jonwaldstein/vibrato"
     }
   ],
   "keywords": [
     "wordpress"
   ],
   "support": {
-    "issues": "https://github.com/Jpwaldstein/vibrato/issues"
+    "issues": "https://github.com/jonwaldstein/vibrato/issues"
   },
   "require": {
     "php": ">=7.1.0",
