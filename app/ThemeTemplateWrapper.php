@@ -12,6 +12,9 @@ namespace Vibrato;
  */
 class ThemeTemplateWrapper
 {
+    // Stores the base template directory path to each template
+    public static $template_dir = '/resources/views/common/';
+
     // Stores the full path to the main template file
     public static $main_template;
 
@@ -27,7 +30,7 @@ class ThemeTemplateWrapper
     public function __construct($template = 'base.php')
     {
         $this->slug = basename($template, '.php');
-        $this->templates = [$template];
+        $this->templates = [self::$template_dir . $template];
 
         if (self::$base) {
             $str = substr($template, 0, -4);
@@ -54,7 +57,7 @@ class ThemeTemplateWrapper
             self::$base = false;
         }
 
-        return new ThemeTemplateWrapper();
+        return new self();
     }
 
     public static function template_path()

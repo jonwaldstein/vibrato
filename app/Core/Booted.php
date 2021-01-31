@@ -1,6 +1,6 @@
 <?php
 
-namespace Vibrato\Traits;
+namespace Vibrato\Core;
 
 /**
  * @since 1.0.0

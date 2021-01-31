@@ -2,12 +2,11 @@
 
 namespace Vibrato;
 
+use Vibrato\Core\BaseTheme;
 use Vibrato\Traits\Booted;
 
-class ThemeWidgets
+class ThemeWidgets extends BaseTheme
 {
-    use Booted;
-
     protected function register()
     {
         add_action('widgets_init', array($this, 'register_sidebars'));

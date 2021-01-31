@@ -2,17 +2,15 @@
 
 namespace Vibrato;
 
-use Vibrato\Traits\Booted;
+use Vibrato\Core\BaseTheme;
 
 /**
  * class ThemeActions
  *
  * @since 1.0.0
  */
-class ThemeActions
+class ThemeActions extends BaseTheme
 {
-    use Booted;
-
     protected function register()
     {
     }

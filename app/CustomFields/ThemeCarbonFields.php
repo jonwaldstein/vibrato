@@ -2,17 +2,15 @@
 
 namespace Vibrato\CustomFields;
 
-use Vibrato\Traits\Booted;
+use Vibrato\Core\BaseTheme;
 
 /**
  * class ThemeCarbonFields
  *
  * @since 1.0.0
  */
-final class ThemeCarbonFields
+final class ThemeCarbonFields extends BaseTheme
 {
-    use Booted;
-
     private $class_methods;
 
     public function register()
