@@ -3,12 +3,12 @@
 namespace Vibrato\Classes;
 
 /**
- * Theme wrapper
+ * class ThemeTemplateWrapper
  *
  * @link https://roots.io/vibrato/docs/theme-wrapper/
  * @link http://scribu.net/wordpress/theme-wrappers.html
  */
-class Wrapper
+class ThemeTemplateWrapper
 {
     // Stores the full path to the main template file
     public static $main_template;
@@ -35,7 +35,6 @@ class Wrapper
 
     public function __toString()
     {
-        $this->templates = apply_filters('vibrato/wrap_' . $this->slug, $this->templates);
         return locate_template($this->templates);
     }
 
@@ -53,7 +52,7 @@ class Wrapper
             self::$base = false;
         }
 
-        return new Wrapper();
+        return new ThemeTemplateWrapper();
     }
 
     public static function template_path()

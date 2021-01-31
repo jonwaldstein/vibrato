@@ -9,7 +9,7 @@ class WalkerNav extends Walker_Nav_Menu
     /**
      * What the class handles.
      *
-     * @since 3.0.0
+     * @since 1.0.0
      * @var string
      *
      * @see Walker::$tree_type
@@ -19,7 +19,7 @@ class WalkerNav extends Walker_Nav_Menu
     /**
      * Database fields to use.
      *
-     * @since 3.0.0
+     * @since 1.0.0
      * @todo Decouple this.
      * @var array
      *
@@ -33,7 +33,7 @@ class WalkerNav extends Walker_Nav_Menu
     /**
      * Starts the list before the elements are added.
      *
-     * @since 3.0.0
+     * @since 1.0.0
      *
      * @see Walker::start_lvl()
      *
@@ -58,7 +58,7 @@ class WalkerNav extends Walker_Nav_Menu
         /**
          * Filters the CSS class(es) applied to a menu list element.
          *
-         * @since 4.8.0
+         * @since 1.0.0
          *
          * @param string[] $classes Array of the CSS classes that are applied to the menu `<ul>` element.
          * @param stdClass $args    An object of `wp_nav_menu()` arguments.
@@ -73,7 +73,7 @@ class WalkerNav extends Walker_Nav_Menu
     /**
      * Ends the list of after the elements are added.
      *
-     * @since 3.0.0
+     * @since 1.0.0
      *
      * @see Walker::end_lvl()
      *
@@ -97,8 +97,7 @@ class WalkerNav extends Walker_Nav_Menu
     /**
      * Starts the element output.
      *
-     * @since 3.0.0
-     * @since 4.4.0 The {@see 'nav_menu_item_args'} filter was added.
+     * @since 1.0.0
      *
      * @see Walker::start_el()
      *
@@ -125,7 +124,7 @@ class WalkerNav extends Walker_Nav_Menu
         /**
          * Filters the arguments for a single nav menu item.
          *
-         * @since 4.4.0
+         * @since 1.0.0
          *
          * @param stdClass $args  An object of wp_nav_menu() arguments.
          * @param WP_Post  $item  Menu item data object.
@@ -136,8 +135,7 @@ class WalkerNav extends Walker_Nav_Menu
         /**
          * Filters the CSS classes applied to a menu item's list item element.
          *
-         * @since 3.0.0
-         * @since 4.1.0 The `$depth` parameter was added.
+         * @since 1.0.0
          *
          * @param string[] $classes Array of the CSS classes that are applied to the menu item's `<li>` element.
          * @param WP_Post  $item    The current menu item.
@@ -150,8 +148,7 @@ class WalkerNav extends Walker_Nav_Menu
         /**
          * Filters the ID applied to a menu item's list item element.
          *
-         * @since 3.0.1
-         * @since 4.1.0 The `$depth` parameter was added.
+         * @since 1.0.0
          *
          * @param string   $menu_id The ID that is applied to the menu item's `<li>` element.
          * @param WP_Post  $item    The current menu item.
@@ -177,8 +174,7 @@ class WalkerNav extends Walker_Nav_Menu
         /**
          * Filters the HTML attributes applied to a menu item's anchor element.
          *
-         * @since 3.6.0
-         * @since 4.1.0 The `$depth` parameter was added.
+         * @since 1.0.0
          *
          * @param array $atts {
          *     The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored.
@@ -209,7 +205,7 @@ class WalkerNav extends Walker_Nav_Menu
         /**
          * Filters a menu item's title.
          *
-         * @since 4.4.0
+         * @since 1.0.0
          *
          * @param string   $title The menu item's title.
          * @param WP_Post  $item  The current menu item.
@@ -231,7 +227,7 @@ class WalkerNav extends Walker_Nav_Menu
          * the menu item's title, the closing `</a>`, and `$args->after`. Currently, there is
          * no filter for modifying the opening and closing `<li>` for a menu item.
          *
-         * @since 3.0.0
+         * @since 1.0.0
          *
          * @param string   $item_output The menu item's starting HTML output.
          * @param WP_Post  $item        Menu item data object.
@@ -244,7 +240,7 @@ class WalkerNav extends Walker_Nav_Menu
     /**
      * Ends the element output, if needed.
      *
-     * @since 3.0.0
+     * @since 1.0.0
      *
      * @see Walker::end_el()
      *

@@ -1,6 +1,6 @@
 <?php
 
-use Vibrato\Classes\Wrapper;
+use Vibrato\Classes\ThemeTemplateWrapper;
 use Vibrato\Classes\Setup;
 
 ?>
@@ -22,11 +22,11 @@ use Vibrato\Classes\Setup;
     ?>
     <div class="wrap container mx-auto px-6 py-6 lg:py-6 lg:px-0">
         <main class="main">
-            <?php include Wrapper::template_path(); ?>
+            <?php include ThemeTemplateWrapper::template_path(); ?>
         </main><!-- /.main -->
         <?php if (Setup::display_sidebar()) : ?>
             <aside class="sidebar">
-                <?php include Wrapper::sidebar_path(); ?>
+                <?php include ThemeTemplateWrapper::sidebar_path(); ?>
             </aside><!-- /.sidebar -->
         <?php endif; ?>
     </div><!-- /.wrap -->
