@@ -173,8 +173,7 @@ class Setup
         add_theme_support('responsive-embeds');
 
         // Use main stylesheet for visual editor
-        // To add custom styles edit /assets/styles/layouts/_tinymce.scss
-        add_editor_style(Theme::asset_path('styles/main.css'));
+        add_editor_style(Theme::asset_path('css/app.css'));
     }
 
     /**
@@ -256,16 +255,16 @@ class Setup
     /**
      * Theme assets
      */
-    function assets()
+    function resources()
     {
-        wp_enqueue_style('sage/css', Theme::asset_path('styles/main.css'), false, null);
+        wp_enqueue_style('sage/css', Theme::asset_path('css/app.css'), false, null);
         wp_enqueue_style('sage/googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400,500,700', false, null);
 
         if (is_single() && comments_open() && get_option('thread_comments')) {
             wp_enqueue_script('comment-reply');
         }
 
-        wp_enqueue_script('sage/js', Theme::asset_path('js/main.js'), [], null, true);
+        wp_enqueue_script('sage/js', Theme::asset_path('js/app.js'), [], null, true);
 
         wp_localize_script('sage/js', 'WPREST', array(
             'root' => esc_url_raw(rest_url()),
