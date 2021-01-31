@@ -1,8 +1,8 @@
 <?php
 
-namespace Vibrato\Classes;
+namespace Vibrato;
 
-class Setup
+class ThemeSetup
 {
 
     public function init()
@@ -10,6 +10,29 @@ class Setup
         add_action('after_setup_theme', array($this, 'setup'));
         add_action('wp_enqueue_scripts', array($this, 'resources'), 100);
     }
+
+    /**
+     * Theme assets
+     */
+    function resources()
+    {
+        // css
+        wp_enqueue_style('vibrato/css', Theme::asset_path('css/app.css'), false, null);
+
+        // fonts
+        wp_enqueue_style('vibrato/googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400,500,700', false, null);
+
+        // js
+        wp_enqueue_script('vibrato/js', Theme::asset_path('js/app.js'), [], null, true);
+
+        // api
+        wp_localize_script('vibrato/js', 'WPREST', array(
+            'root' => esc_url_raw(rest_url()),
+            'nonce' => wp_create_nonce('wp_rest'),
+            'current_ID' => get_the_ID()
+        ));
+    }
+
     /**
      * Theme setup
      */
@@ -189,26 +212,5 @@ class Setup
         ]);
 
         return apply_filters('sage/display_sidebar', $display);
-    }
-
-    /**
-     * Theme assets
-     */
-    function resources()
-    {
-        wp_enqueue_style('vibrato/css', Theme::asset_path('css/app.css'), false, null);
-        wp_enqueue_style('vibrato/googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400,500,700', false, null);
-
-        if (is_single() && comments_open() && get_option('thread_comments')) {
-            wp_enqueue_script('comment-reply');
-        }
-
-        wp_enqueue_script('vibrato/js', Theme::asset_path('js/app.js'), [], null, true);
-
-        wp_localize_script('vibrato/js', 'WPREST', array(
-            'root' => esc_url_raw(rest_url()),
-            'nonce' => wp_create_nonce('wp_rest'),
-            'current_ID' => get_the_ID()
-        ));
     }
 }

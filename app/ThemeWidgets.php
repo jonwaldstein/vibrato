@@ -1,18 +1,18 @@
 <?php
 
-namespace Vibrato\Classes;
+namespace Vibrato;
 
 class ThemeWidgets
 {
     public function init()
     {
-        add_action('widgets_init', array($this, 'widgets_init'));
+        add_action('widgets_init', array($this, 'register_sidebars'));
     }
 
     /**
      * Register sidebars
      */
-    public function widgets_init()
+    public function register_sidebars()
     {
         register_sidebar([
             'name'          => __('Primary', 'vibrato'),

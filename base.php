@@ -1,7 +1,7 @@
 <?php
 
-use Vibrato\Classes\ThemeTemplateWrapper;
-use Vibrato\Classes\Setup;
+use Vibrato\ThemeTemplateWrapper;
+use Vibrato\ThemeSetup;
 
 ?>
 
@@ -24,7 +24,7 @@ use Vibrato\Classes\Setup;
         <main class="main">
             <?php include ThemeTemplateWrapper::template_path(); ?>
         </main><!-- /.main -->
-        <?php if (Setup::display_sidebar()) : ?>
+        <?php if (ThemeSetup::display_sidebar()) : ?>
             <aside class="sidebar">
                 <?php include ThemeTemplateWrapper::sidebar_path(); ?>
             </aside><!-- /.sidebar -->

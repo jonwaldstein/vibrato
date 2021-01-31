@@ -1,7 +1,5 @@
 <?php
 
-use Vibrato\Classes\WalkerNav;
-
 $site_logo = function_exists('carbon_get_theme_option') ? carbon_get_theme_option('site_logo') : null;
 ?>
 <header class="w-full bg-teal-500">

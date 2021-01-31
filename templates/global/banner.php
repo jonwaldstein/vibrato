@@ -1,6 +1,6 @@
 <?php
 
-use Vibrato\Classes\Theme;
+use Vibrato\Theme;
 
 $background_image = carbon_get_the_post_meta('banner_background_image');
 $banner_heading = carbon_get_the_post_meta('banner_heading');

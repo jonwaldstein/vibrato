@@ -1,6 +1,6 @@
 <?php
 
-namespace Vibrato\Classes;
+namespace Vibrato;
 
 /**
  * class ThemeTemplateWrapper

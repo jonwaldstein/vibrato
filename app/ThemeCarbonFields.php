@@ -1,9 +1,6 @@
 <?php
 
-namespace Vibrato\Classes;
-
-use Carbon_Fields\Container;
-use Carbon_Fields\Field;
+namespace Vibrato;
 
 final class ThemeCarbonFields
 {

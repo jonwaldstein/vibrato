@@ -1,6 +1,6 @@
 <?php
 
-use Vibrato\Classes\Theme; ?>
+use Vibrato\Theme; ?>
 
 <div class="page-header">
     <h1><?= Theme::title(); ?></h1>

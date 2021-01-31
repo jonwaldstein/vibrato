@@ -1,6 +1,6 @@
 <?php
 
-use Vibrato\Classes\Theme;
+use Vibrato\Theme;
 ?>
 <?php while (have_posts()) : the_post(); ?>
 

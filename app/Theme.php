@@ -1,6 +1,6 @@
 <?php
 
-namespace Vibrato\Classes;
+namespace Vibrato;
 
 /**
  * class Theme
@@ -9,49 +9,77 @@ namespace Vibrato\Classes;
  */
 final class Theme
 {
-    public function add_filters()
+    public function init()
     {
-        if (class_exists('Vibrato\\Classes\\ThemeFilters')) {
+        $this->setup();
+        $this->add_filters();
+        $this->add_actions();
+        $this->register_widgets();
+        $this->register_custom_taxonomies();
+        $this->register_custom_post_types();
+        $this->register_custom_fields();
+    }
+
+    protected function setup()
+    {
+        if (class_exists('Vibrato\\ThemeSetup')) {
+            $Setup = new ThemeSetup();
+            $Setup->init();
+        }
+    }
+
+    protected function add_filters()
+    {
+        if (class_exists('Vibrato\\ThemeFilters')) {
             $Filters = new ThemeFilters();
             $Filters->init();
         }
     }
 
-    public function add_actions()
+    protected function add_actions()
     {
-        if (class_exists('Vibrato\\Classes\\ThemeActions')) {
+        if (class_exists('Vibrato\\ThemeActions')) {
             $Actions = new ThemeActions();
             $Actions->init();
         }
     }
 
-    public function add_shortcodes()
+    protected function register_widgets()
     {
-        //add_shortcode( 'custom_shortcode', array($this, 'custom_shortcode'));
+        if (class_exists('Vibrato\\ThemeWidgets')) {
+            $ThemeWidgets = new ThemeWidgets();
+            $ThemeWidgets->init();
+        }
     }
 
-    public function register_custom_taxonomies()
+    protected function register_custom_taxonomies()
     {
         add_action('init', function () {
             get_template_part('app/callbacks/tax/tax-sectionpage');
         });
     }
 
-    public function register_custom_post_types()
+    protected function register_custom_post_types()
     {
         add_action('init', function () {
             get_template_part('app/callbacks/cpt/cpt-sections');
         }, 0);
     }
 
-    public function register_widgets()
+    protected function register_custom_fields()
     {
-        // $this->widget_recent_posts();
+        /**
+         * Initialize all the Carbon Fields
+         */
+        if (class_exists('Vibrato\\ThemeCarbonFields')) {
 
-        // add_action( 'widgets_init', function(){
-        // 	register_widget( 'widget_recent_posts' );
-        // });
+            add_action('after_setup_theme', function () {
+                \Carbon_Fields\Carbon_Fields::boot();
+            });
 
+            $ThemeCarbonFields = new ThemeCarbonFields;
+            $ThemeCarbonFields->register_fields();
+        }
     }
 
     public static function asset_path($filename)
@@ -59,6 +87,7 @@ final class Theme
         $public_path = get_template_directory_uri() . '/public/';
         $directory = dirname($filename) . '/';
         $file = basename($filename);
+
         return $public_path . $directory . $file;
     }
 
