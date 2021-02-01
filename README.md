@@ -1,4 +1,4 @@
-# Vibrato WordPress Theme Boilerplate
+# Vibrato - A WordPress Theme Boilerplate Scaffolded With Tailwindcss, Alpinejs, & Carbon Fields
 
 ## Setup
 
