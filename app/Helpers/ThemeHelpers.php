@@ -2,6 +2,8 @@
 
 namespace Vibrato\Helpers;
 
+use Vibrato\Theme;
+
 /**
  * class ThemeHelpers
  *
@@ -9,6 +11,11 @@ namespace Vibrato\Helpers;
  */
 trait ThemeHelpers
 {
+    /**
+     * Get the path to the public folder
+     *
+     * @since 1.0.0
+     */
     public static function asset_path($filename)
     {
         $public_path = get_template_directory_uri() . '/public/';
@@ -20,6 +27,8 @@ trait ThemeHelpers
 
     /**
      * Page titles
+     *
+     * @since 1.0.0
      */
     public static function title()
     {
@@ -40,6 +49,11 @@ trait ThemeHelpers
         }
     }
 
+    /**
+     * Simple WP Loop helper with addition of get_template_part
+     *
+     * @since 1.0.0
+     */
     public static function wp_loop(string $page_template): void
     {
         while (have_posts()) : the_post();
@@ -75,6 +89,8 @@ trait ThemeHelpers
     }
 
     /**
+     * Simple navigation helper
+     *
      * @since 1.0.0
      */
     public static function display_navigation(string $navigation_name, string $menu_class): void
@@ -85,5 +101,19 @@ trait ThemeHelpers
                 'menu_class' => $menu_class,
             ]);
         }
+    }
+
+    /**
+     * Display logo using the native wp customizer logo field
+     *
+     * @since 1.0.0
+     */
+    public static function display_logo(): void
+    {
+        if (!has_custom_logo()){
+            echo '<image class="h-16 w-auto" src=' . Theme::asset_path('images/wp-logo.png') . ' />';
+        }
+
+        echo wp_get_attachment_image(get_theme_mod('custom_logo'), 'full', false, ['class' => 'h-8 w-auto']);
     }
 }
