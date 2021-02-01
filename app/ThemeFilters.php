@@ -35,11 +35,6 @@ class ThemeFilters extends BaseTheme
             }
         }
 
-        // Add class if sidebar is active
-        if (ThemeSetup::display_sidebar()) {
-            $classes[] = 'sidebar-primary';
-        }
-
         return $classes;
     }
 

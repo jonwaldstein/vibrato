@@ -21,6 +21,7 @@ final class Theme extends BaseTheme
         $this->add_filters();
         $this->add_actions();
         $this->register_widgets();
+        $this->register_nav_menus();
         $this->register_custom_taxonomies();
         $this->register_custom_post_types();
         $this->register_custom_fields();
@@ -44,6 +45,11 @@ final class Theme extends BaseTheme
     protected function register_widgets()
     {
         ThemeWidgets::boot();
+    }
+
+    protected function register_nav_menus()
+    {
+        ThemeMenus::boot();
     }
 
     protected function register_custom_taxonomies()

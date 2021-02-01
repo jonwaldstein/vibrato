@@ -24,11 +24,6 @@ use Vibrato\ThemeSetup;
                 <!-- /End replace -->
             </div>
         </main><!-- /.main -->
-        <?php if (ThemeSetup::display_sidebar()) : ?>
-            <aside class="sidebar">
-                <?php include TemplateWrapper::sidebar_path(); ?>
-            </aside><!-- /.sidebar -->
-        <?php endif; ?>
     </div><!-- /.wrap -->
     <?php
     do_action('get_footer');

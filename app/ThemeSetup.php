@@ -61,13 +61,6 @@ class ThemeSetup extends BaseTheme
             )
         );
 
-        // Register wp_nav_menu() menus
-        // http://codex.wordpress.org/Function_Reference/register_nav_menus
-        register_nav_menus([
-            Menu::primary()->value => __('Primary Navigation', 'vibrato'),
-            Menu::secondary()->value => __('Secondary Navigation', 'vibrato'),
-        ]);
-
         // Add default posts and comments RSS feed links to head.
         add_theme_support('automatic-feed-links');
 
@@ -183,21 +176,5 @@ class ThemeSetup extends BaseTheme
 
         // Add support for responsive embedded content.
         add_theme_support('responsive-embeds');
-    }
-
-
-    /**
-     * Determine which pages should NOT display the sidebar
-     */
-    public static function display_sidebar()
-    {
-        static $display;
-
-        isset($display) || $display = in_array(true, [
-            // The sidebar will NOT be displayed if ANY of the following return true.
-            // @link https://codex.wordpress.org/Conditional_Tags
-        ]);
-
-        return apply_filters('sage/display_sidebar', $display);
     }
 }
