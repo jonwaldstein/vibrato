@@ -62,7 +62,8 @@ class ThemeSetup extends BaseTheme
         // Register wp_nav_menu() menus
         // http://codex.wordpress.org/Function_Reference/register_nav_menus
         register_nav_menus([
-            'primary_navigation' => __('Primary Navigation', 'vibrato')
+            'primary_navigation' => __('Primary Navigation', 'vibrato'),
+            'secondary_navigation' => __('Secondary Navigation', 'vibrato'),
         ]);
 
         // Add default posts and comments RSS feed links to head.

@@ -97,14 +97,17 @@ class ThemeFilters extends BaseTheme
      */
     public function nav_menu_link_attributes($atts, $item, $args, $depth)
     {
-        // Primary Navigation
-        if (in_array($args->theme_location, $this->primary_navs)) {
-            if ($depth === 0) {
-                $atts['class'] = $item->current ? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium block' : 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium block';
+        if (!in_array($args->theme_location, $this->primary_navs)){
+            $atts['class'] = $item->current ? 'block px-4 py-2 text-sm text-gray-900 bg-gray-100 hover:text-gray-900' : 'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900';
 
-            } else {
-                $atts['class'] = $item->current ? '' : '';
-            }
+            return $atts;
+        }
+
+        // Primary Navigation
+        if ($depth === 0) {
+            $atts['class'] = $item->current ? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium block' : 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium block';
+        } else {
+            $atts['class'] = $item->current ? '' : '';
         }
 
         return $atts;

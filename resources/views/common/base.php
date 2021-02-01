@@ -6,13 +6,13 @@ use Vibrato\ThemeSetup;
 
 <!doctype html>
 <html <?php language_attributes(); ?>>
-<?php get_template_part('resources/views/global/head'); ?>
+<?php get_template_part('resources/views/common/head'); ?>
 
 <body <?php body_class(); ?>>
     <?php
     do_action('get_header');
-    get_template_part('resources/views/global/header');
-    get_template_part('resources/views/global/banner');
+    get_template_part('resources/views/common/header');
+    get_template_part('resources/views/common/banner');
     ?>
     <div class="wrap h-screen">
         <main>
@@ -32,7 +32,7 @@ use Vibrato\ThemeSetup;
     </div><!-- /.wrap -->
     <?php
     do_action('get_footer');
-    get_template_part('resources/views/global/footer');
+    get_template_part('resources/views/common/footer');
     wp_footer();
     ?>
 </body>

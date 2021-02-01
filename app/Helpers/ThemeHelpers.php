@@ -93,7 +93,7 @@ trait ThemeHelpers
      *
      * @since 1.0.0
      */
-    public static function display_navigation(string $navigation_name, string $menu_class): void
+    public static function display_navigation(string $navigation_name, ?string $menu_class = 'menu'): void
     {
         if (has_nav_menu($navigation_name)) {
             wp_nav_menu([
