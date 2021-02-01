@@ -175,5 +175,14 @@ class ThemeSetup extends BaseTheme
 
         // Add support for responsive embedded content.
         add_theme_support('responsive-embeds');
+
+        //Some blocks can have padding controls.
+        add_theme_support('custom-spacing');
+
+        // In addition to pixels, users can use other units to define sizes, paddings…
+        // The available units are: px, em, rem, vh, vw.
+        add_theme_support('custom-units', 'rem');
+
+        //remove_theme_support('core-block-patterns');
     }
 }
