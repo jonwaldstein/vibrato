@@ -5,7 +5,7 @@ namespace Vibrato\Core;
 /**
  * @since 1.0.0
  */
-trait Booted
+trait Bootable
 {
     /**
      * Flag if Theme has been booted

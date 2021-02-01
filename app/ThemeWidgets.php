@@ -3,7 +3,6 @@
 namespace Vibrato;
 
 use Vibrato\Core\BaseTheme;
-use Vibrato\Traits\Booted;
 
 class ThemeWidgets extends BaseTheme
 {

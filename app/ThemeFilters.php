@@ -3,6 +3,7 @@
 namespace Vibrato;
 
 use Vibrato\Core\BaseTheme;
+use Vibrato\ValueObjects\Menu;
 
 /**
  * class ThemeFilters
@@ -11,8 +12,6 @@ use Vibrato\Core\BaseTheme;
  */
 class ThemeFilters extends BaseTheme
 {
-    public $primary_navs = ['primary_navigation'];
-
     protected function register()
     {
         add_filter('body_class', array($this, 'body_class'));
@@ -80,8 +79,9 @@ class ThemeFilters extends BaseTheme
      */
     public function nav_menu_css_class($classes, $item, $args, $depth)
     {
+        $menu = new Menu($args->theme_location);
         // Primary Navigation
-        if (in_array($args->theme_location, $this->primary_navs)) {
+        if ($menu->isPrimary()) {
             // Check for Parent or Children Item Classes
             $classes[] = $depth === 0 ? '' : '' ;
         // Default Navigation
@@ -97,7 +97,9 @@ class ThemeFilters extends BaseTheme
      */
     public function nav_menu_link_attributes($atts, $item, $args, $depth)
     {
-        if (!in_array($args->theme_location, $this->primary_navs)){
+        $menu = new Menu($args->theme_location);
+        // Primary Navigation
+        if (!$menu->isPrimary()){
             $atts['class'] = $item->current ? 'block px-4 py-2 text-sm text-gray-900 bg-gray-100 hover:text-gray-900' : 'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900';
 
             return $atts;
@@ -118,8 +120,9 @@ class ThemeFilters extends BaseTheme
      */
     public function nav_menu_submenu_css_class($classes, $args, $depth)
     {
+        $menu = new Menu($args->theme_location);
         // Primary Navigation
-        if (in_array($args->theme_location, $this->primary_navs)) {
+        if ($menu->isPrimary()) {
             $classes[] = '';
         // Default Navigation
         } else {

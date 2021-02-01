@@ -12,7 +12,7 @@
                  <!-- Desktop Navigation -->
                  <div class="hidden md:block">
                      <div class="ml-10 flex items-baseline space-x-4">
-                         <?php Vibrato\Theme::display_navigation('primary_navigation', 'ml-10 flex items-baseline space-x-4'); ?>
+                         <?php Vibrato\Theme::display_navigation(Vibrato\ValueObjects\Menu::primary()->value, 'ml-10 flex items-baseline space-x-4'); ?>
                      </div>
                  </div>
 
@@ -34,7 +34,7 @@
 
          <!-- Mobile menu, toggle classes based on menu state. Open: "block", closed: "hidden" -->
          <div :class="{ 'block': mobileMenuOpen, 'hidden': !mobileMenuOpen }" class="md:hidden block">
-             <?php Vibrato\Theme::display_navigation('primary_navigation', 'px-2 pt-2 pb-3 space-y-1 sm:px-3'); ?>
+             <?php Vibrato\Theme::display_navigation(Vibrato\ValueObjects\Menu::primary()->value, 'px-2 pt-2 pb-3 space-y-1 sm:px-3'); ?>
          </div>
      </nav>
  </div>

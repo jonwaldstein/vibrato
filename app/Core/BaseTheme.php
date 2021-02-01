@@ -2,7 +2,7 @@
 
 namespace Vibrato\Core;
 
-use Vibrato\Core\Booted;
+use Vibrato\Core\Bootable;
 
 /**
  * class Theme
@@ -11,7 +11,7 @@ use Vibrato\Core\Booted;
  */
 abstract class BaseTheme
 {
-    use Booted;
+    use Bootable;
 
     /**
      * @since 1.0.0
