@@ -16,7 +16,7 @@ trait ThemeHelpers
      *
      * @since 1.0.0
      */
-    public static function asset_path($filename)
+    public static function asset_path($filename): string
     {
         $public_path = get_template_directory_uri() . '/public/';
         $directory = dirname($filename) . '/';
@@ -30,7 +30,7 @@ trait ThemeHelpers
      *
      * @since 1.0.0
      */
-    public static function title()
+    public static function title(): string
     {
         if (is_home()) {
             if (get_option('page_for_posts', true)) {
@@ -58,7 +58,7 @@ trait ThemeHelpers
     {
         while (have_posts()) : the_post();
 
-            get_template_part($page_template);
+            self::get_template_part($page_template);
 
         endwhile;
     }
@@ -73,7 +73,9 @@ trait ThemeHelpers
     {
         $template_dir = 'resources/views/';
 
-        if (is_home()) {
+        if (is_front_page()) {
+            $template = $template_dir . 'front-page';
+        } else if (is_home()) {
             $template = $template_dir . 'home';
         } else if (is_404()) {
             $template = $template_dir . '404';
@@ -115,5 +117,15 @@ trait ThemeHelpers
         }
 
         echo wp_get_attachment_image(get_theme_mod('custom_logo'), 'full', false, ['class' => 'h-8 w-auto']);
+    }
+
+    /**
+     * make it easier to get resources folder
+     *
+     * @since 1.0.0
+     */
+    public static function get_template_part(string $slug, ?string $name = null, ?array $args = []): void
+    {
+        get_template_part('resources/views/' . $slug, $name, $args);
     }
 }

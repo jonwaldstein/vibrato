@@ -181,9 +181,6 @@ class ThemeSetup extends BaseTheme
 
         // Add support for responsive embedded content.
         add_theme_support('responsive-embeds');
-
-        // Use main stylesheet for visual editor
-        add_editor_style(Theme::asset_path('css/app.css'));
     }
 
 

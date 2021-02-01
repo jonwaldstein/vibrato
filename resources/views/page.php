@@ -1,5 +1,1 @@
-<?php
-
-use Vibrato\Theme;
-
-Theme::wp_loop('resources/views/partials/page/content');
+<?php Vibrato\Theme::wp_loop('partials/page/content');

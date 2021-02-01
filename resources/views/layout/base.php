@@ -12,7 +12,7 @@ use Vibrato\ThemeSetup;
     <?php
     do_action('get_header');
     get_template_part('resources/views/common/header');
-    get_template_part('resources/views/common/banner');
+    !is_front_page() && get_template_part('resources/views/common/banner');
     ?>
     <div class="wrap h-screen">
         <main>

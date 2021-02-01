@@ -1,5 +1,1 @@
-<?php
-
-use Vibrato\Theme;
-
-Theme::get_default_template();
+<?php Vibrato\Theme::get_default_template();

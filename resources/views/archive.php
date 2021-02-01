@@ -1,5 +1,1 @@
-<?php while (have_posts()) : the_post(); ?>
-
-    Archive Template
-
-<?php endwhile; ?>
+<?php Vibrato\Theme::wp_loop('partials/archive/content');
