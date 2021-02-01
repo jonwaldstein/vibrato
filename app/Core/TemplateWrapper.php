@@ -1,6 +1,6 @@
 <?php
 
-namespace Vibrato;
+namespace Vibrato\Core;
 
 /**
  * class ThemeTemplateWrapper
@@ -10,7 +10,7 @@ namespace Vibrato;
  * @link https://roots.io/vibrato/docs/theme-wrapper/
  * @link http://scribu.net/wordpress/theme-wrappers.html
  */
-class ThemeTemplateWrapper
+class TemplateWrapper
 {
     // Stores the base template directory path to each template
     public static $template_dir = '/resources/views/layout/';

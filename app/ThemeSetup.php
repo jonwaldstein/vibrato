@@ -3,6 +3,7 @@
 namespace Vibrato;
 
 use Vibrato\Core\BaseTheme;
+use Vibrato\Core\TemplateWrapper;
 
 class ThemeSetup extends BaseTheme
 {
@@ -10,7 +11,7 @@ class ThemeSetup extends BaseTheme
     {
         add_action('after_setup_theme', array($this, 'setup'));
         add_action('wp_enqueue_scripts', array($this, 'resources'), 100);
-        add_filter('template_include', [ThemeTemplateWrapper::class, 'wrap'], 109);
+        add_filter('template_include', [TemplateWrapper::class, 'wrap'], 109);
     }
 
     /**
