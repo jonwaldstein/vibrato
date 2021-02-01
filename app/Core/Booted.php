@@ -55,8 +55,8 @@ trait Booted
             return;
         }
 
-        static::instance()->booted = true;
-
         static::instance()->register();
+
+        static::instance()->booted = true;
     }
 }
