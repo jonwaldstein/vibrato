@@ -82,21 +82,12 @@ class ThemeFilters extends BaseTheme
     {
         // Primary Navigation
         if (in_array($args->theme_location, $this->primary_navs)) {
-            //Parent Item Classes
-            if ($depth === 0) {
-                $classes[] = 'relative block lg:inline-block lg:mt-0 mr-4';
-                //Children Item Classes
-            } else {
-                $classes[] = 'relative block text-black hover:text-grey';
-            }
+            // Check for Parent or Children Item Classes
+            $classes[] = $depth === 0 ? '' : '' ;
+        // Default Navigation
         } else {
-            //Parent Item Classes
-            if ($depth === 0) {
-                $classes[] = 'relative block lg:inline-block lg:mt-0 mr-4';
-                //Children Item Classes
-            } else {
-                $classes[] = 'relative block text-black hover:text-grey';
-            }
+            // Check for Parent or Children Item Classes
+            $classes[] = $depth === 0 ? '' : '';
         }
         return $classes;
     }
@@ -109,27 +100,10 @@ class ThemeFilters extends BaseTheme
         // Primary Navigation
         if (in_array($args->theme_location, $this->primary_navs)) {
             if ($depth === 0) {
-                $atts['class'] = 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium';
-                if ($item->current) {
-                    $atts['class'] = 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium';
-                }
+                $atts['class'] = $item->current ? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium block' : 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium block';
+
             } else {
-                $atts['class'] = 'block px-4 py-2 text-gray-800 hover:bg-black hover:text-white text-sm';
-                if ($item->current) {
-                    $atts['class'] = 'block px-4 py-2 text-gray-800 hover:bg-black hover:text-white text-sm underline';
-                }
-            }
-        } else {
-            if ($depth === 0) {
-                $atts['class'] = 'inline-block text-sm text-teal-200 hover:text-white';
-                if ($item->current) {
-                    $atts['class'] = 'inline-block text-sm text-gray-800 hover:text-black';
-                }
-            } else {
-                $atts['class'] = 'block px-4 py-2 text-gray-800 hover:bg-black hover:text-white text-sm';
-                if ($item->current) {
-                    $atts['class'] = 'block px-4 py-2 text-gray-800 hover:bg-black hover:text-white text-sm underline';
-                }
+                $atts['class'] = $item->current ? '' : '';
             }
         }
 
@@ -143,9 +117,10 @@ class ThemeFilters extends BaseTheme
     {
         // Primary Navigation
         if (in_array($args->theme_location, $this->primary_navs)) {
-            $classes[] = 'relative hidden lg:absolute block bg-white w-64 right-0 bg-white shadow-sm';
+            $classes[] = '';
+        // Default Navigation
         } else {
-            $classes[] = 'relative hidden lg:absolute block bg-white w-64 right-0 bg-white shadow-sm';
+            $classes[] = '';
         }
 
         return $classes;

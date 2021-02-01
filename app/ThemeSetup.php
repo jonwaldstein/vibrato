@@ -171,21 +171,6 @@ class ThemeSetup extends BaseTheme
                     'color' => '#333',
                 ),
                 array(
-                    'name'  => __('Secondary', 'vibrato'),
-                    'slug'  => 'secondary',
-                    'color' => '#333',
-                ),
-                array(
-                    'name'  => __('Dark Gray', 'vibrato'),
-                    'slug'  => 'dark-gray',
-                    'color' => '#111',
-                ),
-                array(
-                    'name'  => __('Light Gray', 'vibrato'),
-                    'slug'  => 'light-gray',
-                    'color' => '#767676',
-                ),
-                array(
                     'name'  => __('White', 'vibrato'),
                     'slug'  => 'white',
                     'color' => '#FFF',
