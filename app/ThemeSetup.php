@@ -4,21 +4,20 @@ namespace Vibrato;
 
 use Vibrato\Core\BaseTheme;
 use Vibrato\Core\TemplateWrapper;
-use Vibrato\ValueObjects\Menu;
 
 class ThemeSetup extends BaseTheme
 {
     protected function register()
     {
         add_action('after_setup_theme', array($this, 'setup'));
-        add_action('wp_enqueue_scripts', array($this, 'resources'), 100);
+        add_action('wp_enqueue_scripts', array($this, 'enqueue'), 100);
         add_filter('template_include', [TemplateWrapper::class, 'wrap'], 109);
     }
 
     /**
-     * Theme assets
+     * Enqueue theme resources
      */
-    function resources()
+    function enqueue()
     {
         // css
         wp_enqueue_style('vibrato/css', Theme::asset_path('css/app.css'), false, null);
