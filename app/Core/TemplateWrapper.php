@@ -13,7 +13,7 @@ namespace Vibrato\Core;
 class TemplateWrapper
 {
     // Stores the base template directory path to each template
-    public static $template_dir = '/resources/views/layout/';
+    public static $template_dir = 'resources/views/layout/';
 
     // Stores the full path to the main template file
     public static $main_template;
