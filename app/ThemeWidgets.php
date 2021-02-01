@@ -3,6 +3,7 @@
 namespace Vibrato;
 
 use Vibrato\Core\BaseTheme;
+use Vibrato\ValueObjects\Sidebar;
 
 class ThemeWidgets extends BaseTheme
 {
@@ -17,8 +18,8 @@ class ThemeWidgets extends BaseTheme
     public function register_sidebars()
     {
         register_sidebar([
-            'name'          => __('Primary', 'vibrato'),
-            'id'            => 'sidebar-primary',
+            'name'          => __(Sidebar::primary()->label, 'vibrato'),
+            'id'            => Sidebar::primary()->value,
             'before_widget' => '<section class="widget %1$s %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h3>',
@@ -26,44 +27,8 @@ class ThemeWidgets extends BaseTheme
         ]);
 
         register_sidebar([
-            'name'          => __('Footer', 'vibrato'),
-            'id'            => 'sidebar-footer',
-            'before_widget' => '<section class="widget %1$s %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h4>',
-            'after_title'   => '</h4>'
-        ]);
-
-        register_sidebar([
-            'name'          => __('Footer Column 1', 'vibrato'),
-            'id'            => 'footer-column-1',
-            'before_widget' => '<section class="widget %1$s %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h4>',
-            'after_title'   => '</h4>'
-        ]);
-
-        register_sidebar([
-            'name'          => __('Footer Column 2', 'vibrato'),
-            'id'            => 'footer-column-2',
-            'before_widget' => '<section class="widget %1$s %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h4>',
-            'after_title'   => '</h4>'
-        ]);
-
-        register_sidebar([
-            'name'          => __('Footer Column 3', 'vibrato'),
-            'id'            => 'footer-column-3',
-            'before_widget' => '<section class="widget %1$s %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h4>',
-            'after_title'   => '</h4>'
-        ]);
-
-        register_sidebar([
-            'name'          => __('Footer Copyright', 'vibrato'),
-            'id'            => 'footer-copyright',
+            'name'          => __(Sidebar::footer()->label, 'vibrato'),
+            'id'            => Sidebar::footer()->value,
             'before_widget' => '<section class="widget %1$s %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h4>',

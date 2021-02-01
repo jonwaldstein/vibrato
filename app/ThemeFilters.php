@@ -74,9 +74,8 @@ class ThemeFilters extends BaseTheme
      */
     public function nav_menu_css_class($classes, $item, $args, $depth)
     {
-        $menu = new Menu($args->theme_location);
         // Primary Navigation
-        if ($menu->isPrimary()) {
+        if ($args->theme_location === Menu::primary()->value) {
             // Check for Parent or Children Item Classes
             $classes[] = $depth === 0 ? '' : '' ;
         // Default Navigation
@@ -92,9 +91,8 @@ class ThemeFilters extends BaseTheme
      */
     public function nav_menu_link_attributes($atts, $item, $args, $depth)
     {
-        $menu = new Menu($args->theme_location);
         // Primary Navigation
-        if (!$menu->isPrimary()){
+        if ($args->theme_location !== Menu::primary()->value){
             $atts['class'] = $item->current ? 'block px-4 py-2 text-sm text-gray-900 bg-gray-100 hover:text-gray-900' : 'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900';
 
             return $atts;
@@ -115,9 +113,8 @@ class ThemeFilters extends BaseTheme
      */
     public function nav_menu_submenu_css_class($classes, $args, $depth)
     {
-        $menu = new Menu($args->theme_location);
         // Primary Navigation
-        if ($menu->isPrimary()) {
+        if ($args->theme_location === Menu::primary()->value) {
             $classes[] = '';
         // Default Navigation
         } else {

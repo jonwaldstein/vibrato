@@ -64,9 +64,4 @@ class TemplateWrapper
     {
         return self::$main_template;
     }
-
-    public static function sidebar_path()
-    {
-        return new self('templates/sidebar.php');
-    }
 }
