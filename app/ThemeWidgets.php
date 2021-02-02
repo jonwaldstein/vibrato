@@ -31,7 +31,7 @@ class ThemeWidgets extends BaseTheme
             'id'            => Sidebar::footer()->value,
             'before_widget' => '<section>',
             'after_widget'  => '</section>',
-            'before_title'  => '<h4 class="text-gray-900 py-2 font-medium block">',
+            'before_title'  => '<h4 class="text-md font-semibold tracking-wide text-gray-900 mb-2">',
             'after_title'   => '</h4>'
         ]);
     }

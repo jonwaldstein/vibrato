@@ -1,10 +1,10 @@
-<footer class="relative w-full">
-    <div class="max-w-7xl">
-        <div class="grid grid-flow-row sm:grid-cols-3 gap-4 justify-items-center border-t-2 p-6 md:p-8">
+<footer class="relative w-full bg-gray-50">
+    <div class="max-w-screen-lg xl:max-w-screen-xl mx-auto divide-y divide-gray-200 px-4 sm:px-6 md:px-8">
+        <div class="grid grid-flow-row sm:grid-cols-3 gap-4 justify-items-center px-4 py-12 md:py-24">
             <?php dynamic_sidebar(Vibrato\ValueObjects\Sidebar::footer()->value); ?>
         </div>
-        <div class="flex justify-center items-center border-t-2 p-6 md:p-8">
-            <p class="text-gray-600 text-sm">Copyright &#169; <?= date('Y '); ?> All rights reserved.</p>
+        <div class="flex justify-center items-center p-6 md:p-8">
+            <p class="text-gray-600 text-sm">Copyright &#169; <?= sprintf('%s %s', date('Y '), get_bloginfo('name')); ?> | All rights reserved.</p>
         </div>
     </div>
 </footer>

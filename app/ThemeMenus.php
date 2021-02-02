@@ -15,7 +15,7 @@ class ThemeMenus extends BaseTheme
     protected function register()
     {
         add_action('after_setup_theme', array($this, 'register_nav_menus'));
-        add_filter('nav_menu_css_class', array($this, 'nav_menu_css_class'), 10, 4);
+        add_filter('nav_menu_css_class', array($this, 'nav_menu_list_item_css_class'), 10, 4);
         add_filter('nav_menu_submenu_css_class', array($this, 'nav_menu_submenu_css_class'), 10, 4);
         add_filter('nav_menu_link_attributes', array($this, 'nav_menu_link_attributes'), 10, 4);
     }
@@ -37,7 +37,7 @@ class ThemeMenus extends BaseTheme
     /**
      * Nav Menu - <li> item </li>
      */
-    public function nav_menu_css_class($classes, $item, $args, $depth)
+    public function nav_menu_list_item_css_class($classes, $item, $args, $depth)
     {
         // Primary Navigation
         if ($args->theme_location === Menu::primary()->value) {
