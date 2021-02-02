@@ -16,11 +16,8 @@ use Vibrato\ThemeSetup;
     ?>
     <div class="wrap">
         <main>
-            <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 h-screen">
-                <!-- Replace with your content -->
-                <div class="px-4 py-6 sm:px-0 h-auto">
+            <div class="max-w-screen-lg mx-auto h-screen p-4">
                     <?php include TemplateWrapper::template_path(); ?>
-                </div>
                 <!-- /End replace -->
             </div>
         </main><!-- /.main -->

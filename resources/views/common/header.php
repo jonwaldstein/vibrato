@@ -1,11 +1,11 @@
  <div>
      <nav x-data="{ mobileMenuOpen: false }" @keydown.window.escape="open = false" class="bg-gray-800">
-         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
              <div class="flex items-center justify-between h-16">
                  <!-- Logo -->
                  <div class="flex items-center">
                      <div class="flex-shrink-0">
-                        <?php Vibrato\Theme::display_logo(); ?>
+                         <?php Vibrato\Theme::display_logo(); ?>
                      </div>
                  </div>
 
