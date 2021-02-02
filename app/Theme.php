@@ -21,8 +21,10 @@ final class Theme extends BaseTheme
     protected function register(): void
     {
         $this->setup();
+        $this->enqueue_scripts();
         $this->add_filters();
         $this->add_actions();
+        $this->add_theme_support();
         $this->register_widgets();
         $this->register_nav_menus();
         $this->register_custom_taxonomies();
@@ -41,6 +43,14 @@ final class Theme extends BaseTheme
     /**
      * @since 1.0.0
      */
+    protected function enqueue_scripts(): void
+    {
+        ThemeEnqueue::boot();
+    }
+
+    /**
+     * @since 1.0.0
+     */
     protected function add_filters(): void
     {
         ThemeFilters::boot();
@@ -52,6 +62,14 @@ final class Theme extends BaseTheme
     protected function add_actions(): void
     {
         ThemeActions::boot();
+    }
+
+    /**
+     * @since 1.0.0
+     */
+    protected function add_theme_support(): void
+    {
+        ThemeSupport::boot();
     }
 
     /**
