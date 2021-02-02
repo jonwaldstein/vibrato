@@ -29,9 +29,9 @@ class ThemeWidgets extends BaseTheme
         register_sidebar([
             'name'          => __(Sidebar::footer()->label, 'vibrato'),
             'id'            => Sidebar::footer()->value,
-            'before_widget' => '<section class="w-56 bg-white ring-1 ring-black ring-opacity-5">',
+            'before_widget' => '<section>',
             'after_widget'  => '</section>',
-            'before_title'  => '<h4 class="text-gray-900 px-3 py-2 font-medium block">',
+            'before_title'  => '<h4 class="text-gray-900 py-2 font-medium block">',
             'after_title'   => '</h4>'
         ]);
     }
