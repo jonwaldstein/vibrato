@@ -7,7 +7,7 @@ use Vibrato\ValueObjects\Sidebar;
 
 class ThemeWidgets extends BaseTheme
 {
-    protected function register()
+    protected function register(): void
     {
         add_action('widgets_init', array($this, 'register_sidebars'));
     }

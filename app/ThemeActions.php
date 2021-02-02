@@ -11,7 +11,7 @@ use Vibrato\Core\BaseTheme;
  */
 class ThemeActions extends BaseTheme
 {
-    protected function register()
+    protected function register(): void
     {
     }
 }

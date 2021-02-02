@@ -16,5 +16,5 @@ abstract class BaseTheme
     /**
      * @since 1.0.0
      */
-    abstract protected function register();
+    abstract protected function register(): void;
 }

@@ -12,7 +12,7 @@ use Vibrato\ValueObjects\Menu;
  */
 class ThemeFilters extends BaseTheme
 {
-    protected function register()
+    protected function register(): void
     {
         add_filter('body_class', array($this, 'body_class'));
         add_filter('excerpt_more', array($this, 'excerpt_more'));

@@ -15,7 +15,10 @@ final class Theme extends BaseTheme
 {
     use ThemeHelpers;
 
-    protected function register()
+    /**
+     * @since 1.0.0
+     */
+    protected function register(): void
     {
         $this->setup();
         $this->add_filters();
@@ -27,46 +30,70 @@ final class Theme extends BaseTheme
         $this->register_custom_fields();
     }
 
-    protected function setup()
+    /**
+     * @since 1.0.0
+     */
+    protected function setup(): void
     {
         ThemeSetup::boot();
     }
 
-    protected function add_filters()
+    /**
+     * @since 1.0.0
+     */
+    protected function add_filters(): void
     {
         ThemeFilters::boot();
     }
 
-    protected function add_actions()
+    /**
+     * @since 1.0.0
+     */
+    protected function add_actions(): void
     {
         ThemeActions::boot();
     }
 
-    protected function register_widgets()
+    /**
+     * @since 1.0.0
+     */
+    protected function register_widgets(): void
     {
         ThemeWidgets::boot();
     }
 
-    protected function register_nav_menus()
+    /**
+     * @since 1.0.0
+     */
+    protected function register_nav_menus(): void
     {
         ThemeMenus::boot();
     }
 
-    protected function register_custom_taxonomies()
+    /**
+     * @since 1.0.0
+     */
+    protected function register_custom_taxonomies(): void
     {
         add_action('init', function () {
             //register_taxonomy('', []);
         });
     }
 
-    protected function register_custom_post_types()
+    /**
+     * @since 1.0.0
+     */
+    protected function register_custom_post_types(): void
     {
         add_action('init', function () {
             //register_post_type('', []);
         }, 0);
     }
 
-    protected function register_custom_fields()
+    /**
+     * @since 1.0.0
+     */
+    protected function register_custom_fields(): void
     {
         /**
          * Initialize all the Carbon Fields

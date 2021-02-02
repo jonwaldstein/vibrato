@@ -13,7 +13,7 @@ final class ThemeCarbonFields extends BaseTheme
 {
     private $class_methods;
 
-    public function register()
+    public function register(): void
     {
         $this->class_methods = get_class_methods($this);
 

@@ -12,7 +12,7 @@ use Vibrato\ValueObjects\Menu;
  */
 class ThemeMenus extends BaseTheme
 {
-    protected function register()
+    protected function register(): void
     {
         add_action('after_setup_theme', array($this, 'register_nav_menus'));
         add_filter('nav_menu_css_class', array($this, 'nav_menu_list_item_css_class'), 10, 4);

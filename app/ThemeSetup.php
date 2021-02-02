@@ -7,7 +7,7 @@ use Vibrato\Core\TemplateWrapper;
 
 class ThemeSetup extends BaseTheme
 {
-    protected function register()
+    protected function register(): void
     {
         add_action('after_setup_theme', array($this, 'setup'));
         add_action('wp_enqueue_scripts', array($this, 'enqueue'), 100);
