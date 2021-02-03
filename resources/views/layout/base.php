@@ -17,7 +17,7 @@ use Vibrato\ThemeSetup;
     <div class="wrap">
         <main>
             <div class="max-w-screen-lg mx-auto h-screen p-4">
-                    <?php include TemplateWrapper::template_path(); ?>
+                <?php include TemplateWrapper::template_path(); ?>
                 <!-- /End replace -->
             </div>
         </main><!-- /.main -->
