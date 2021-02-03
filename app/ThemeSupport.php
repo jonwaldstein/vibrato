@@ -159,5 +159,18 @@ class ThemeSupport extends BaseTheme
         add_theme_support('custom-units', 'rem');
 
         //remove_theme_support('core-block-patterns');
+
+        // @see https://developer.wordpress.org/themes/functionality/custom-headers/
+        add_theme_support('custom-header', [
+            // Display the header text along with the image
+            'header-text' => true,
+            // Header text color default
+            'default-text-color' => '000',
+            // Header image width (in pixels)
+            'width' => 1000,
+            // Header image height (in pixels)
+            'height' => 198,
+            ]
+        );
     }
 }

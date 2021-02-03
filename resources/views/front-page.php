@@ -1,1 +1,1 @@
-<?php get_template_part('resources/views/components/PageHero',null,[]);
+<?php get_template_part('resources/views/components/PageHero'); ?>
