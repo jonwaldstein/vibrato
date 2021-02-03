@@ -11,7 +11,8 @@
 <body <?php body_class(); ?>>
     <?php
     wp_body_open();
-    get_header();
+    do_action('get_header');
+    get_template_part('resources/views/common/header');
     !is_front_page() && get_template_part('resources/views/common/banner');
     ?>
 
@@ -22,7 +23,8 @@
     </main>
 
     <?php
-    get_footer();
+    do_action('get_footer');
+    get_template_part('resources/views/common/footer');
     wp_footer();
     ?>
 </body>
