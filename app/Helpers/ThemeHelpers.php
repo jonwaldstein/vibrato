@@ -71,23 +71,28 @@ trait ThemeHelpers
      */
     public static function get_default_template(): void
     {
-        $template_dir = 'resources/views/';
-
-        if (is_front_page()) {
-            $template = $template_dir . 'front-page';
-        } else if (is_home()) {
-            $template = $template_dir . 'home';
-        } else if (is_404()) {
-            $template = $template_dir . '404';
-        } else if (is_single()) {
-            $template = $template_dir . 'single';
-        } else if (is_archive()) {
-            $template = $template_dir . 'archive';
-        } else {
-            $template = $template_dir . get_post_type();
+        switch (true) {
+            case is_front_page():
+                $template = 'front-page';
+                break;
+            case is_home():
+                $template = 'home';
+                break;
+            case is_404():
+                $template = '404';
+                break;
+            case is_single():
+                $template = 'single';
+                break;
+            case is_archive():
+                $template = 'archive';
+                break;
+            default:
+                $template = get_post_type();
+                break;
         }
 
-        get_template_part($template);
+        get_template_part('resources/views/' . $template);
     }
 
     /**
@@ -112,7 +117,7 @@ trait ThemeHelpers
      */
     public static function display_logo(): void
     {
-        if (!has_custom_logo()){
+        if (!has_custom_logo()) {
             echo '<image class="h-16 w-auto" src=' . Theme::asset_path('images/wp-logo.png') . ' />';
         }
 
