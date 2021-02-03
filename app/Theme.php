@@ -20,7 +20,6 @@ final class Theme extends BaseTheme
      */
     protected function register(): void
     {
-        $this->setup();
         $this->enqueue_scripts();
         $this->add_filters();
         $this->add_actions();
@@ -31,15 +30,6 @@ final class Theme extends BaseTheme
         $this->register_custom_post_types();
         $this->register_custom_fields();
     }
-
-    /**
-     * @since 1.0.0
-     */
-    protected function setup(): void
-    {
-        ThemeSetup::boot();
-    }
-
     /**
      * @since 1.0.0
      */

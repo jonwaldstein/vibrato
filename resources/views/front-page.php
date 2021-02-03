@@ -1,1 +1,1 @@
-<?php Vibrato\Theme::get_template_part('partials/page/hero'); ?>
+<?php get_template_part('resources/views/components/PageHero',null,[]);

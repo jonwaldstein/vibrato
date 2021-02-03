@@ -1,1 +1,1 @@
-<?php Vibrato\Theme::wp_loop('partials/page/content');
+<?php the_content();

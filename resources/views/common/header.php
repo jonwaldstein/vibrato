@@ -1,4 +1,4 @@
- <div>
+ <header>
      <nav x-data="{ mobileMenuOpen: false }" @keydown.window.escape="open = false" class="bg-gray-800">
          <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
              <div class="flex items-center justify-between h-16">
@@ -37,4 +37,4 @@
              <?php Vibrato\Theme::display_navigation(Vibrato\ValueObjects\Menu::primary()->value, 'px-2 pt-2 pb-3 space-y-1 sm:px-3'); ?>
          </div>
      </nav>
- </div>
+ </header>

@@ -50,15 +50,15 @@ trait ThemeHelpers
     }
 
     /**
-     * Simple WP Loop helper with addition of get_template_part
+     * Simple WP Loop helper
      *
      * @since 1.0.0
      */
-    public static function wp_loop(string $page_template): void
+    public static function wp_loop(callable $content): void
     {
         while (have_posts()) : the_post();
 
-            self::get_template_part($page_template);
+            call_user_func($content);
 
         endwhile;
     }
@@ -66,6 +66,8 @@ trait ThemeHelpers
     /**
      *
      * This allows us to use our views folder for default wp templates
+     *
+     * @see https://developer.wordpress.org/themes/basics/conditional-tags/
      *
      * @since 1.0.0
      */
