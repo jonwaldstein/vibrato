@@ -17,6 +17,17 @@ class ThemeFilters extends BaseTheme
         add_filter('excerpt_more', array($this, 'excerpt_more'));
         add_filter('mce_buttons_2', array($this, 'custom_tinymce_buttons'));
         add_filter('tiny_mce_before_init', array($this, 'custom_tinymce_text_sizes'));
+        add_filter('next_post_link', [$this, 'post_pagination_link']);
+        add_filter('previous_post_link', [$this, 'post_pagination_link']);
+    }
+
+    /**
+     * @since 1.1.0
+     */
+    public function post_pagination_link($html)
+    {
+        $html = str_replace('<a ', '<a class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50" ', $html);
+        return $html;
     }
 
     /**
