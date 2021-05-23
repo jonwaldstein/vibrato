@@ -3,4 +3,4 @@
 ## Setup
 
 - `composer install`
-- `yarn && yarn dev`
+- `npm install && npm run dev`
