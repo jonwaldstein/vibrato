@@ -21,7 +21,7 @@ class ThemeGutenberg extends BaseTheme
 
         // gutenberg
         wp_register_script(
-            'vibrato/js-blocks',
+            'vibrato/blocks',
             Theme::asset_path('js/blocks.js'),
             $asset_file['dependencies'],
             $asset_file['version']
@@ -34,8 +34,8 @@ class ThemeGutenberg extends BaseTheme
     public function register_blocks()
     {
         // blocks
-        register_block_type('vibrato/block', array(
-            'editor_script' => 'vibrato/js-blocks',
+        register_block_type('vibrato/blocks', array(
+            'editor_script' => 'vibrato/blocks',
         ));
     }
 }
