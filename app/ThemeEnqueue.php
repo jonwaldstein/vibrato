@@ -25,6 +25,20 @@ class ThemeEnqueue extends BaseTheme
         // js
         wp_enqueue_script('vibrato/js', Theme::asset_path('js/app.js'), [], null, true);
 
+        // gutenberg
+        wp_register_script(
+            'vibrato/js-blocks',
+            Theme::asset_path('js/app.js'),
+            //$asset_file['dependencies'],
+            //$asset_file['version']
+        );
+
+        // gutenberg
+        register_block_type('vibrato/block', array(
+            'api_version' => 2,
+            'editor_script' => 'gutenberg-examples-01-esnext',
+        ));
+
         // api
         wp_localize_script('vibrato/js', 'WPREST', array(
             'root' => esc_url_raw(rest_url()),

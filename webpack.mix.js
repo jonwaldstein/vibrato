@@ -1,7 +1,8 @@
 let mix = require('laravel-mix');
 let path = require('path');
+require('@tinypixelco/laravel-mix-wp-blocks');
 
-mix.setPublicPath('./');
+mix.setPublicPath('./public');
 mix.setResourceRoot('../');
 
 mix.alias({
@@ -9,6 +10,7 @@ mix.alias({
 });
 
 mix.js("resources/js/app.js", "public/js")
+    .block( 'resources/js/blocks.js', 'public/js' )
     .copyDirectory('resources/fonts/', 'public/fonts/')
     .copyDirectory('resources/images/', 'public/images/')
     .postCss("resources/css/app.css", "public/css", [

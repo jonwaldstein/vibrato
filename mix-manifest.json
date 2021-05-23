@@ -1,5 +1,6 @@
 {
     "/public/js/app.js": "/public/js/app.js",
+    "/public/js/blocks.js": "/public/js/blocks.js",
     "/public/css/app.css": "/public/css/app.css",
     "/public/images/wp-logo.png": "/public/images/wp-logo.png"
 }

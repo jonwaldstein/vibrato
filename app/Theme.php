@@ -29,6 +29,7 @@ final class Theme extends BaseTheme
         $this->register_custom_taxonomies();
         $this->register_custom_post_types();
         $this->register_custom_fields();
+        $this->register_gutenberg_scripts();
     }
     /**
      * @since 1.0.0
@@ -111,5 +112,13 @@ final class Theme extends BaseTheme
         });
 
         ThemeCarbonFields::boot();
+    }
+
+    /**
+     * @since 1.0.0
+     */
+    protected function register_gutenberg_scripts(): void
+    {
+        ThemeGutenberg::boot();
     }
 }
