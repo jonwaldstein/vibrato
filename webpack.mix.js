@@ -13,6 +13,7 @@ mix.js("resources/js/app.js", "public/js")
     .block( 'resources/js/blocks.js', 'public/js' )
     .copyDirectory('resources/fonts/', 'public/fonts/')
     .copyDirectory('resources/images/', 'public/images/')
+    .css("resources/css/blocks.css", "public/css")
     .postCss("resources/css/app.css", "public/css", [
         require("tailwindcss"),
     ]);

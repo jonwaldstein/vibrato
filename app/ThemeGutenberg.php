@@ -3,12 +3,14 @@
 namespace Vibrato;
 
 use Vibrato\Core\BaseTheme;
+use Vibrato\ValueObjects\Enqueue;
 
 class ThemeGutenberg extends BaseTheme
 {
     protected function register(): void
     {
         add_action('init', array($this, 'register_scripts'));
+        add_action('init', array($this, 'register_styles'));
         add_action('init', array($this, 'register_blocks'));
     }
 
@@ -19,12 +21,24 @@ class ThemeGutenberg extends BaseTheme
     {
         $asset_file = include_once(get_template_directory() . '/public/js/blocks.asset.php');
 
-        // gutenberg
         wp_register_script(
-            'vibrato/blocks',
+            Enqueue::blockScripts()->value,
             Theme::asset_path('js/blocks.js'),
             $asset_file['dependencies'],
             $asset_file['version']
+        );
+    }
+
+    /**
+     * Register gutenberg styles
+     */
+    public function register_styles()
+    {
+        wp_register_style(
+            Enqueue::blockStyles()->value,
+            Theme::asset_path('css/blocks.css'),
+            array(),
+            filemtime(get_template_directory() . '/public/css/blocks.css')
         );
     }
 
@@ -33,9 +47,9 @@ class ThemeGutenberg extends BaseTheme
      */
     public function register_blocks()
     {
-        // blocks
-        register_block_type('vibrato/blocks', array(
-            'editor_script' => 'vibrato/blocks',
+        register_block_type(Enqueue::blockScripts()->value, array(
+            'editor_script' => Enqueue::blockScripts()->value,
+            'style' => Enqueue::blockStyles()->value,
         ));
     }
 }
