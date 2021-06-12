@@ -1,14 +1,33 @@
-<?php get_template_part('templates/page', 'header'); ?>
+<!doctype html>
+<html <?php language_attributes(); ?>>
 
-<?php if (!have_posts()) : ?>
-  <div class="alert alert-warning">
-    <?php _e('Sorry, no results were found.', 'sage'); ?>
-  </div>
-  <?php get_search_form(); ?>
-<?php endif; ?>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/9f872f9963.js" crossorigin="anonymous"></script>
+    <?php wp_head(); ?>
+</head>
 
-<?php while (have_posts()) : the_post(); ?>
-  <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
-<?php endwhile; ?>
+<body <?php body_class(); ?>>
+    <?php
+    wp_body_open();
+    do_action('get_header');
+    get_template_part('resources/views/common/header');
+    !is_front_page() && get_template_part('resources/views/common/banner');
+    ?>
 
-<?php the_posts_navigation(); ?>
+    <main>
+        <div class="max-w-screen-lg mx-auto h-screen p-4">
+            <?php Vibrato\Theme::get_default_template(); ?>
+        </div>
+    </main>
+
+    <?php
+    do_action('get_footer');
+    get_template_part('resources/views/common/footer');
+    wp_footer();
+    ?>
+</body>
+
+</html>
