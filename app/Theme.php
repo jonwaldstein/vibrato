@@ -2,7 +2,7 @@
 
 namespace Vibrato;
 
-use Vibrato\Core\BaseTheme;
+use Vibrato\Core\Provider;
 use Vibrato\CustomFields\ThemeCarbonFields;
 use Vibrato\Helpers\ThemeHelpers;
 
@@ -11,30 +11,30 @@ use Vibrato\Helpers\ThemeHelpers;
  *
  * @since 1.0.0
  */
-final class Theme extends BaseTheme
+final class Theme extends Provider
 {
     use ThemeHelpers;
 
     /**
      * @since 1.0.0
      */
-    protected function register(): void
+    public function register(): void
     {
-        $this->enqueue_scripts();
-        $this->add_filters();
-        $this->add_actions();
-        $this->add_theme_support();
-        $this->register_widgets();
-        $this->register_nav_menus();
-        $this->register_custom_taxonomies();
-        $this->register_custom_post_types();
-        $this->register_custom_fields();
-        $this->register_gutenberg_scripts();
+        $this->enqueueScripts();
+        $this->addFilters();
+        $this->addActions();
+        $this->addThemeSupport();
+        $this->registerWidgets();
+        $this->registerNavMenus();
+        $this->registerCustomTaxonomies();
+        $this->registerCustomPostTypes();
+        $this->registerCustomFields();
+        $this->registerGutenbergScripts();
     }
     /**
      * @since 1.0.0
      */
-    protected function enqueue_scripts(): void
+    private function enqueueScripts(): void
     {
         ThemeEnqueue::boot();
     }
@@ -42,7 +42,7 @@ final class Theme extends BaseTheme
     /**
      * @since 1.0.0
      */
-    protected function add_filters(): void
+    private function addFilters(): void
     {
         ThemeFilters::boot();
     }
@@ -50,7 +50,7 @@ final class Theme extends BaseTheme
     /**
      * @since 1.0.0
      */
-    protected function add_actions(): void
+    private function addActions(): void
     {
         ThemeActions::boot();
     }
@@ -58,7 +58,7 @@ final class Theme extends BaseTheme
     /**
      * @since 1.0.0
      */
-    protected function add_theme_support(): void
+    private function addThemeSupport(): void
     {
         ThemeSupport::boot();
     }
@@ -66,7 +66,7 @@ final class Theme extends BaseTheme
     /**
      * @since 1.0.0
      */
-    protected function register_widgets(): void
+    private function registerWidgets(): void
     {
         ThemeWidgets::boot();
     }
@@ -74,7 +74,7 @@ final class Theme extends BaseTheme
     /**
      * @since 1.0.0
      */
-    protected function register_nav_menus(): void
+    private function registerNavMenus(): void
     {
         ThemeMenus::boot();
     }
@@ -82,9 +82,9 @@ final class Theme extends BaseTheme
     /**
      * @since 1.0.0
      */
-    protected function register_custom_taxonomies(): void
+    private function registerCustomTaxonomies(): void
     {
-        add_action('init', function () {
+        add_action('init', static function () {
             //register_taxonomy('', []);
         });
     }
@@ -92,9 +92,9 @@ final class Theme extends BaseTheme
     /**
      * @since 1.0.0
      */
-    protected function register_custom_post_types(): void
+    private function registerCustomPostTypes(): void
     {
-        add_action('init', function () {
+        add_action('init', static function () {
             //register_post_type('', []);
         }, 0);
     }
@@ -102,7 +102,7 @@ final class Theme extends BaseTheme
     /**
      * @since 1.0.0
      */
-    protected function register_custom_fields(): void
+    private function registerCustomFields(): void
     {
         /**
          * Initialize all the Carbon Fields
@@ -117,7 +117,7 @@ final class Theme extends BaseTheme
     /**
      * @since 1.0.0
      */
-    protected function register_gutenberg_scripts(): void
+    private function registerGutenbergScripts(): void
     {
         ThemeGutenberg::boot();
     }

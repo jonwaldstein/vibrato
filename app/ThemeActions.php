@@ -2,16 +2,16 @@
 
 namespace Vibrato;
 
-use Vibrato\Core\BaseTheme;
+use Vibrato\Core\Provider;
 
 /**
  * class ThemeActions
  *
  * @since 1.0.0
  */
-class ThemeActions extends BaseTheme
+class ThemeActions extends Provider
 {
-    protected function register(): void
+    public function register(): void
     {
     }
 }

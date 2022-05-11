@@ -2,11 +2,11 @@
 
 namespace Vibrato;
 
-use Vibrato\Core\BaseTheme;
+use Vibrato\Core\Provider;
 
-class ThemeSupport extends BaseTheme
+class ThemeSupport extends Provider
 {
-    protected function register(): void
+    public function register(): void
     {
         add_action('after_setup_theme', array($this, 'add_theme_support'));
     }

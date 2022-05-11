@@ -2,7 +2,7 @@
 
 namespace Vibrato;
 
-use Vibrato\Core\BaseTheme;
+use Vibrato\Core\Provider;
 use Vibrato\ValueObjects\Menu;
 
 /**
@@ -10,9 +10,9 @@ use Vibrato\ValueObjects\Menu;
  *
  * @since 1.0.0
  */
-class ThemeMenus extends BaseTheme
+class ThemeMenus extends Provider
 {
-    protected function register(): void
+    public function register(): void
     {
         add_action('after_setup_theme', array($this, 'register_nav_menus'));
         add_filter('nav_menu_css_class', array($this, 'nav_menu_list_item_css_class'), 10, 4);

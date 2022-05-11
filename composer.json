@@ -18,13 +18,16 @@
     "issues": "https://github.com/jonwaldstein/vibrato/issues"
   },
   "require": {
-    "php": ">=7.1.0",
+    "php": ">=7.4.0",
     "composer/installers": "~1.0",
     "htmlburger/carbon-fields": "^3.2",
     "spatie/enum": "^3.7"
   },
   "config": {
-    "optimize-autoloader": true
+    "optimize-autoloader": true,
+    "allow-plugins": {
+      "composer/installers": true
+    }
   },
   "autoload": {
     "psr-4": {

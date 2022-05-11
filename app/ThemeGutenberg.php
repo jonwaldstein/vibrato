@@ -2,24 +2,24 @@
 
 namespace Vibrato;
 
-use Vibrato\Core\BaseTheme;
+use Vibrato\Core\Provider;
 use Vibrato\ValueObjects\Enqueue;
 
-class ThemeGutenberg extends BaseTheme
+class ThemeGutenberg extends Provider
 {
-    protected function register(): void
+    public function register(): void
     {
         add_action('init', array($this, 'register_scripts'));
-        add_action('init', array($this, 'register_styles'));
-        add_action('init', array($this, 'register_blocks'));
+        add_action('init', array($this, 'registerStyles'));
+        add_action('init', array($this, 'registerBlocks'));
     }
 
     /**
      * Register gutenberg scripts
      */
-    public function register_scripts()
+    public function register_scripts(): void
     {
-        $asset_file = include_once(get_template_directory() . '/public/js/blocks.asset.php');
+        $asset_file = include(get_template_directory() . '/public/js/blocks.asset.php');
 
         wp_register_script(
             Enqueue::blockScripts()->value,
@@ -32,7 +32,7 @@ class ThemeGutenberg extends BaseTheme
     /**
      * Register gutenberg styles
      */
-    public function register_styles()
+    public function registerStyles(): void
     {
         wp_register_style(
             Enqueue::blockStyles()->value,
@@ -45,7 +45,7 @@ class ThemeGutenberg extends BaseTheme
     /**
      * Register gutenberg blocks
      */
-    public function register_blocks()
+    public function registerBlocks(): void
     {
         register_block_type(Enqueue::blockScripts()->value, array(
             'editor_script' => Enqueue::blockScripts()->value,

@@ -2,14 +2,14 @@
 
 namespace Vibrato\CustomFields;
 
-use Vibrato\Core\BaseTheme;
+use Vibrato\Core\Provider;
 
 /**
  * class ThemeCarbonFields
  *
  * @since 1.0.0
  */
-final class ThemeCarbonFields extends BaseTheme
+final class ThemeCarbonFields extends Provider
 {
     private $class_methods;
 

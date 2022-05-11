@@ -2,26 +2,26 @@
 
 namespace Vibrato\Core;
 
+use Give\ServiceProviders\ProviderInterface;
+
 /**
  * @since 1.0.0
  */
-trait Bootable
+abstract class Provider implements ProviderInterface
 {
     /**
-     * Flag if Theme has been booted
-     *
-     * @var bool
+     * Flag if booted
      */
-    public $booted = false;
+    public bool $booted = false;
 
     /**
      * Singleton implementation
      *
      * @since 1.0.0
      *
-     * @return Theme
+     * @return $this
      */
-    public static function instance()
+    public static function instance(): ?Provider
     {
         static $instance = null;
 
@@ -33,25 +33,23 @@ trait Bootable
     }
 
     /**
-     * Check if Theme has booted
+     * Check if booted
      *
      * @since 1.0.0
-     *
      */
-    public static function is_booted()
+    public static function isBooted(): bool
     {
         return static::instance()->booted;
     }
 
     /**
-     * Boot Theme
+     * Boot and mark as booted
      *
      * @since 1.0.0
-     *
      */
-    public static function boot()
+    public static function boot(): void
     {
-        if (static::is_booted()) {
+        if (static::isBooted()) {
             return;
         }
 

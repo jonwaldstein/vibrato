@@ -2,20 +2,20 @@
 
 namespace Vibrato;
 
-use Vibrato\Core\BaseTheme;
+use Vibrato\Core\Provider;
 use Vibrato\ValueObjects\Enqueue;
 
-class ThemeEnqueue extends BaseTheme
+class ThemeEnqueue extends Provider
 {
-    protected function register(): void
+    public function register(): void
     {
-        add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts'), 100);
+        add_action('wp_enqueue_scripts', array($this, 'enqueueScripts'), 100);
     }
 
     /**
      * Enqueue theme resources
      */
-    function enqueue_scripts()
+    public function enqueueScripts(): void
     {
         // css
         wp_enqueue_style(Enqueue::themeStyles()->value, Theme::asset_path('css/app.css'), false, null);

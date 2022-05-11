@@ -2,16 +2,16 @@
 
 namespace Vibrato;
 
-use Vibrato\Core\BaseTheme;
+use Vibrato\Core\Provider;
 
 /**
  * class ThemeFilters
  *
  * @since 1.0.0
  */
-class ThemeFilters extends BaseTheme
+class ThemeFilters extends Provider
 {
-    protected function register(): void
+    public function register(): void
     {
         add_filter('body_class', array($this, 'body_class'));
         add_filter('excerpt_more', array($this, 'excerpt_more'));
